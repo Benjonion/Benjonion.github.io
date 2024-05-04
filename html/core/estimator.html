@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Estimator (Core) &#8212; ALTS-Documentation 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=48851edf" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/functions.css?v=c671ca28" />
+    <link rel="stylesheet" href="../_static/css/functions.css" type="text/css" />
+    
+    <script src="../_static/documentation_options.js?v=1b390748"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <script src="../_static/sidebar.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Evaluator (Core)" href="evaluator.html" />
+    <link rel="prev" title="Configuration (Core)" href="configuration.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="evaluator.html" title="Evaluator (Core)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="configuration.html" title="Configuration (Core)"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">ALTS-Documentation 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../core.html" accesskey="U">Core Modules</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Estimator (Core)</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-alts.core.estimator">
+<span id="estimator-core"></span><h1>Estimator (Core)<a class="headerlink" href="#module-alts.core.estimator" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.core.estimator.Estimator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.core.estimator.</span></span><span class="sig-name descname"><span class="pre">Estimator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.core.estimator.Estimator" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="experiment_module.html#alts.core.experiment_module.ExperimentModule" title="alts.core.experiment_module.ExperimentModule"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExperimentModule</span></code></a>, <a class="reference internal" href="subscriber.html#alts.core.subscriber.ExpModSubscriber" title="alts.core.subscriber.ExpModSubscriber"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExpModSubscriber</span></code></a>, <a class="reference internal" href="subscriber.html#alts.core.subscriber.ResultDataSubscriber" title="alts.core.subscriber.ResultDataSubscriber"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResultDataSubscriber</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.core.estimator.Estimator.estimate">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">estimate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exp_mods</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">NDArray</span><span class="p"><span class="pre">[</span></span><span class="pre">Shape</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'query_nr,</span> <span class="pre">...</span> <span class="pre">result_dim'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Number</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#alts.core.estimator.Estimator.estimate" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.core.estimator.Estimator.experiment_update">
+<span class="sig-name descname"><span class="pre">experiment_update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subscription</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="subscribable.html#alts.core.subscribable.Subscribable" title="alts.core.subscribable.Subscribable"><span class="pre">Subscribable</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.core.estimator.Estimator.experiment_update" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.core.estimator.Estimator.query">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">queries</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.core.estimator.Estimator.query" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.core.estimator.Estimator.result_update">
+<span class="sig-name descname"><span class="pre">result_update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subscription</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="subscribable.html#alts.core.subscribable.Subscribable" title="alts.core.subscribable.Subscribable"><span class="pre">Subscribable</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.core.estimator.Estimator.result_update" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.core.estimator.Estimator.train">
+<span class="sig-name descname"><span class="pre">train</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">result_pool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#alts.core.estimator.Estimator.train" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Estimator (Core)</a><ul>
+<li><a class="reference internal" href="#alts.core.estimator.Estimator"><code class="docutils literal notranslate"><span class="pre">Estimator</span></code></a><ul>
+<li><a class="reference internal" href="#alts.core.estimator.Estimator.estimate"><code class="docutils literal notranslate"><span class="pre">Estimator.estimate()</span></code></a></li>
+<li><a class="reference internal" href="#alts.core.estimator.Estimator.experiment_update"><code class="docutils literal notranslate"><span class="pre">Estimator.experiment_update()</span></code></a></li>
+<li><a class="reference internal" href="#alts.core.estimator.Estimator.query"><code class="docutils literal notranslate"><span class="pre">Estimator.query()</span></code></a></li>
+<li><a class="reference internal" href="#alts.core.estimator.Estimator.result_update"><code class="docutils literal notranslate"><span class="pre">Estimator.result_update()</span></code></a></li>
+<li><a class="reference internal" href="#alts.core.estimator.Estimator.train"><code class="docutils literal notranslate"><span class="pre">Estimator.train()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="configuration.html"
+                          title="previous chapter">Configuration (Core)</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="evaluator.html"
+                          title="next chapter">Evaluator (Core)</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/core/estimator.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+<div id="sidebarbutton" title="Collapse sidebar">
+<span>«</span>
+</div>
+
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="evaluator.html" title="Evaluator (Core)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="configuration.html" title="Configuration (Core)"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">ALTS-Documentation 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../core.html" >Core Modules</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Estimator (Core)</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2024, Benjamin Gors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
+    </div>
+  </body>
+</html>

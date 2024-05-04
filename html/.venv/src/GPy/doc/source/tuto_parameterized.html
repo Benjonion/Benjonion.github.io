@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Parameterization handling &#8212; ALTS-Documentation 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/classic.css?v=48851edf" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/css/functions.css?v=c671ca28" />
+    <link rel="stylesheet" href="../../../../../_static/css/functions.css" type="text/css" />
+    
+    <script src="../../../../../_static/documentation_options.js?v=1b390748"></script>
+    <script src="../../../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <script src="../../../../../_static/sidebar.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../../../index.html">ALTS-Documentation 0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Parameterization handling</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="parameterization-handling">
+<span id="parameterized"></span><h1>Parameterization handling<a class="headerlink" href="#parameterization-handling" title="Link to this heading">¶</a></h1>
+<p>Parameterization in GPy is done through so called parameter handles. The parameter handles are handles to parameters of a model of any kind. A parameter handle can be constrained, fixed, randomized and others. All parameters in GPy have a name, with which they can be accessed in the model. The most common way of accesssing a parameter programmatically though, is by variable name.</p>
+<section id="parameter-handles">
+<h2>Parameter handles<a class="headerlink" href="#parameter-handles" title="Link to this heading">¶</a></h2>
+<p>A parameter handle in GPy is a handle on a parameter, as the name suggests. A parameter can be constrained, fixed, randomized and more (See e.g. <cite>working with models</cite>). This gives the freedom to the model to handle parameter distribution and model updates as efficiently as possible. All parameter handles share a common memory space, which is just a flat numpy array, stored in the highest parent of a model hierarchy.
+In the following we will introduce and elucidate the different parameter handles which exist in GPy.</p>
+</section>
+<section id="id1">
+<h2><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameterized</span></code><a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
+<p>A parameterized object itself holds parameter handles and is just a summarization of the parameters below. It can use those parameters to change the internal state of the model and GPy ensures those parameters to allways hold the right value when in an optimization routine or any other update.</p>
+</section>
+<section id="param">
+<h2><code class="xref py py-class docutils literal notranslate"><span class="pre">Param</span></code><a class="headerlink" href="#param" title="Link to this heading">¶</a></h2>
+<p>The lowest level of parameter is a numpy array. This Param class inherits all functionality of a numpy array and can simply be used as if it where a numpy array. These parameters can be accessed in the same way as a numpy array is indexed.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Parameterization handling</a><ul>
+<li><a class="reference internal" href="#parameter-handles">Parameter handles</a></li>
+<li><a class="reference internal" href="#id1"><code class="xref py py-class docutils literal notranslate"><span class="pre">Parameterized</span></code></a></li>
+<li><a class="reference internal" href="#param"><code class="xref py py-class docutils literal notranslate"><span class="pre">Param</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../_sources/.venv/src/GPy/doc/source/tuto_parameterized.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+<div id="sidebarbutton" title="Collapse sidebar">
+<span>«</span>
+</div>
+
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../../../index.html">ALTS-Documentation 0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Parameterization handling</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2024, Benjamin Gors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
+    </div>
+  </body>
+</html>

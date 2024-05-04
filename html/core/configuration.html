@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Configuration (Core) &#8212; ALTS-Documentation 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=48851edf" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/functions.css?v=c671ca28" />
+    <link rel="stylesheet" href="../_static/css/functions.css" type="text/css" />
+    
+    <script src="../_static/documentation_options.js?v=1b390748"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <script src="../_static/sidebar.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Estimator (Core)" href="estimator.html" />
+    <link rel="prev" title="Blueprint (Core)" href="blueprint.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="estimator.html" title="Estimator (Core)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="blueprint.html" title="Blueprint (Core)"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">ALTS-Documentation 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../core.html" accesskey="U">Core Modules</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Configuration (Core)</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-alts.core.configuration">
+<span id="configuration-core"></span><h1>Configuration (Core)<a class="headerlink" href="#module-alts.core.configuration" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.core.configuration.ConfAttr">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.core.configuration.</span></span><span class="sig-name descname"><span class="pre">ConfAttr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">NOTSET</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.core.configuration.ConfAttr" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.core.configuration.Configurable">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.core.configuration.</span></span><span class="sig-name descname"><span class="pre">Configurable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.core.configuration.Configurable" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#alts.core.configuration.ROOT" title="alts.core.configuration.ROOT"><code class="xref py py-class docutils literal notranslate"><span class="pre">ROOT</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.core.configuration.ConfigurableMeta">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.core.configuration.</span></span><span class="sig-name descname"><span class="pre">ConfigurableMeta</span></span><a class="headerlink" href="#alts.core.configuration.ConfigurableMeta" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">type</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="alts.core.configuration.InitError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.core.configuration.</span></span><span class="sig-name descname"><span class="pre">InitError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">object</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.core.configuration.InitError" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">AttributeError</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.core.configuration.NotSet">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.core.configuration.</span></span><span class="sig-name descname"><span class="pre">NotSet</span></span><a class="headerlink" href="#alts.core.configuration.NotSet" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.core.configuration.ROOT">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.core.configuration.</span></span><span class="sig-name descname"><span class="pre">ROOT</span></span><a class="headerlink" href="#alts.core.configuration.ROOT" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.core.configuration.ROOT.init">
+<span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.core.configuration.ROOT.init" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.core.configuration.ROOT.post_init">
+<span class="sig-name descname"><span class="pre">post_init</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#alts.core.configuration.ROOT.post_init" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="alts.core.configuration.init">
+<span class="sig-prename descclassname"><span class="pre">alts.core.configuration.</span></span><span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">NOTSET</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_factory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">NOTSET</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#alts.core.configuration.init" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="alts.core.configuration.is_set">
+<span class="sig-prename descclassname"><span class="pre">alts.core.configuration.</span></span><span class="sig-name descname"><span class="pre">is_set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">param</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.core.configuration.is_set" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="alts.core.configuration.post_init">
+<span class="sig-prename descclassname"><span class="pre">alts.core.configuration.</span></span><span class="sig-name descname"><span class="pre">post_init</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#alts.core.configuration.post_init" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="alts.core.configuration.pre_init">
+<span class="sig-prename descclassname"><span class="pre">alts.core.configuration.</span></span><span class="sig-name descname"><span class="pre">pre_init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">NOTSET</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_factory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">NOTSET</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#alts.core.configuration.pre_init" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Configuration (Core)</a><ul>
+<li><a class="reference internal" href="#alts.core.configuration.ConfAttr"><code class="docutils literal notranslate"><span class="pre">ConfAttr</span></code></a></li>
+<li><a class="reference internal" href="#alts.core.configuration.Configurable"><code class="docutils literal notranslate"><span class="pre">Configurable</span></code></a></li>
+<li><a class="reference internal" href="#alts.core.configuration.ConfigurableMeta"><code class="docutils literal notranslate"><span class="pre">ConfigurableMeta</span></code></a></li>
+<li><a class="reference internal" href="#alts.core.configuration.InitError"><code class="docutils literal notranslate"><span class="pre">InitError</span></code></a></li>
+<li><a class="reference internal" href="#alts.core.configuration.NotSet"><code class="docutils literal notranslate"><span class="pre">NotSet</span></code></a></li>
+<li><a class="reference internal" href="#alts.core.configuration.ROOT"><code class="docutils literal notranslate"><span class="pre">ROOT</span></code></a><ul>
+<li><a class="reference internal" href="#alts.core.configuration.ROOT.init"><code class="docutils literal notranslate"><span class="pre">ROOT.init()</span></code></a></li>
+<li><a class="reference internal" href="#alts.core.configuration.ROOT.post_init"><code class="docutils literal notranslate"><span class="pre">ROOT.post_init()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#alts.core.configuration.init"><code class="docutils literal notranslate"><span class="pre">init()</span></code></a></li>
+<li><a class="reference internal" href="#alts.core.configuration.is_set"><code class="docutils literal notranslate"><span class="pre">is_set()</span></code></a></li>
+<li><a class="reference internal" href="#alts.core.configuration.post_init"><code class="docutils literal notranslate"><span class="pre">post_init()</span></code></a></li>
+<li><a class="reference internal" href="#alts.core.configuration.pre_init"><code class="docutils literal notranslate"><span class="pre">pre_init()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="blueprint.html"
+                          title="previous chapter">Blueprint (Core)</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="estimator.html"
+                          title="next chapter">Estimator (Core)</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/core/configuration.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+<div id="sidebarbutton" title="Collapse sidebar">
+<span>«</span>
+</div>
+
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="estimator.html" title="Estimator (Core)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="blueprint.html" title="Blueprint (Core)"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">ALTS-Documentation 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../core.html" >Core Modules</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Configuration (Core)</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2024, Benjamin Gors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
+    </div>
+  </body>
+</html>

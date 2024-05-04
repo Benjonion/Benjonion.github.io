@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Selection Criteria (Implementation) &#8212; ALTS-Documentation 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/classic.css?v=48851edf" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/functions.css?v=c671ca28" />
+    <link rel="stylesheet" href="../../_static/css/functions.css" type="text/css" />
+    
+    <script src="../../_static/documentation_options.js?v=1b390748"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <script src="../../_static/sidebar.js"></script>
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Behavior (Implementation)" href="../behavior.html" />
+    <link rel="prev" title="Query Sampler (Implementation)" href="query_sampler.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../behavior.html" title="Behavior (Implementation)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="query_sampler.html" title="Query Sampler (Implementation)"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">ALTS-Documentation 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../modules.html" >Module Implementations</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../query.html" accesskey="U">Query (Implementation)</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Selection Criteria (Implementation)</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-alts.modules.query.selection_criteria">
+<span id="selection-criteria-implementation"></span><h1>Selection Criteria (Implementation)<a class="headerlink" href="#module-alts.modules.query.selection_criteria" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.modules.query.selection_criteria.AllSelectionCriteria">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.modules.query.selection_criteria.</span></span><span class="sig-name descname"><span class="pre">AllSelectionCriteria</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.query.selection_criteria.AllSelectionCriteria" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../core/query/selection_criteria.html#alts.core.query.selection_criteria.SelectionCriteria" title="alts.core.query.selection_criteria.SelectionCriteria"><code class="xref py py-class docutils literal notranslate"><span class="pre">SelectionCriteria</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.query.selection_criteria.AllSelectionCriteria.query">
+<span class="sig-name descname"><span class="pre">query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">queries</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.query.selection_criteria.AllSelectionCriteria.query" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.modules.query.selection_criteria.NoSelectionCriteria">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.modules.query.selection_criteria.</span></span><span class="sig-name descname"><span class="pre">NoSelectionCriteria</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.query.selection_criteria.NoSelectionCriteria" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../core/query/selection_criteria.html#alts.core.query.selection_criteria.SelectionCriteria" title="alts.core.query.selection_criteria.SelectionCriteria"><code class="xref py py-class docutils literal notranslate"><span class="pre">SelectionCriteria</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.query.selection_criteria.NoSelectionCriteria.query">
+<span class="sig-name descname"><span class="pre">query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">queries</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.query.selection_criteria.NoSelectionCriteria.query" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.modules.query.selection_criteria.RandomSelectionCriteria">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.modules.query.selection_criteria.</span></span><span class="sig-name descname"><span class="pre">RandomSelectionCriteria</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.query.selection_criteria.RandomSelectionCriteria" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../core/query/selection_criteria.html#alts.core.query.selection_criteria.SelectionCriteria" title="alts.core.query.selection_criteria.SelectionCriteria"><code class="xref py py-class docutils literal notranslate"><span class="pre">SelectionCriteria</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.query.selection_criteria.RandomSelectionCriteria.query">
+<span class="sig-name descname"><span class="pre">query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">queries</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.query.selection_criteria.RandomSelectionCriteria.query" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Selection Criteria (Implementation)</a><ul>
+<li><a class="reference internal" href="#alts.modules.query.selection_criteria.AllSelectionCriteria"><code class="docutils literal notranslate"><span class="pre">AllSelectionCriteria</span></code></a><ul>
+<li><a class="reference internal" href="#alts.modules.query.selection_criteria.AllSelectionCriteria.query"><code class="docutils literal notranslate"><span class="pre">AllSelectionCriteria.query()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#alts.modules.query.selection_criteria.NoSelectionCriteria"><code class="docutils literal notranslate"><span class="pre">NoSelectionCriteria</span></code></a><ul>
+<li><a class="reference internal" href="#alts.modules.query.selection_criteria.NoSelectionCriteria.query"><code class="docutils literal notranslate"><span class="pre">NoSelectionCriteria.query()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#alts.modules.query.selection_criteria.RandomSelectionCriteria"><code class="docutils literal notranslate"><span class="pre">RandomSelectionCriteria</span></code></a><ul>
+<li><a class="reference internal" href="#alts.modules.query.selection_criteria.RandomSelectionCriteria.query"><code class="docutils literal notranslate"><span class="pre">RandomSelectionCriteria.query()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="query_sampler.html"
+                          title="previous chapter">Query Sampler (Implementation)</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="../behavior.html"
+                          title="next chapter">Behavior (Implementation)</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/modules/query/selection_criteria.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+<div id="sidebarbutton" title="Collapse sidebar">
+<span>«</span>
+</div>
+
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../behavior.html" title="Behavior (Implementation)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="query_sampler.html" title="Query Sampler (Implementation)"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">ALTS-Documentation 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../modules.html" >Module Implementations</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../query.html" >Query (Implementation)</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Selection Criteria (Implementation)</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2024, Benjamin Gors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
+    </div>
+  </body>
+</html>

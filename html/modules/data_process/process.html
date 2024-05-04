@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Process (Implementation) &#8212; ALTS-Documentation 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/classic.css?v=48851edf" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/functions.css?v=c671ca28" />
+    <link rel="stylesheet" href="../../_static/css/functions.css" type="text/css" />
+    
+    <script src="../../_static/documentation_options.js?v=1b390748"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <script src="../../_static/sidebar.js"></script>
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Time Source (Implementation)" href="time_source.html" />
+    <link rel="prev" title="Data Process (Implementation)" href="../data_process.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="time_source.html" title="Time Source (Implementation)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../data_process.html" title="Data Process (Implementation)"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">ALTS-Documentation 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../modules.html" >Module Implementations</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../data_process.html" accesskey="U">Data Process (Implementation)</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Process (Implementation)</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-alts.modules.data_process.process">
+<span id="process-implementation"></span><h1>Process (Implementation)<a class="headerlink" href="#module-alts.modules.data_process.process" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.modules.data_process.process.DataSourceProcess">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.modules.data_process.process.</span></span><span class="sig-name descname"><span class="pre">DataSourceProcess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.data_process.process.DataSourceProcess" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../core/data_process/process.html#alts.core.data_process.process.Process" title="alts.core.data_process.process.Process"><code class="xref py py-class docutils literal notranslate"><span class="pre">Process</span></code></a>, <a class="reference internal" href="../../core/subscriber.html#alts.core.subscriber.ProcessOracleSubscriber" title="alts.core.subscriber.ProcessOracleSubscriber"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessOracleSubscriber</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.data_process.process.DataSourceProcess.data_source">
+<span class="sig-name descname"><span class="pre">data_source</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../../core/oracle/data_source.html#alts.core.oracle.data_source.DataSource" title="alts.core.oracle.data_source.DataSource"><span class="pre">DataSource</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">NOTSET</span></em><a class="headerlink" href="#alts.modules.data_process.process.DataSourceProcess.data_source" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.data_process.process.DataSourceProcess.post_init">
+<span class="sig-name descname"><span class="pre">post_init</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.data_process.process.DataSourceProcess.post_init" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.data_process.process.DataSourceProcess.process_query">
+<span class="sig-name descname"><span class="pre">process_query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subscription</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.data_process.process.DataSourceProcess.process_query" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.data_process.process.DataSourceProcess.query">
+<span class="sig-name descname"><span class="pre">query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">queries</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">NDArray</span><span class="p"><span class="pre">[</span></span><span class="pre">Shape</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'query_nr,</span> <span class="pre">...</span> <span class="pre">query_shape'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Number</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">NDArray</span><span class="p"><span class="pre">[</span></span><span class="pre">Shape</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'query_nr,</span> <span class="pre">...</span> <span class="pre">query_shape'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Number</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NDArray</span><span class="p"><span class="pre">[</span></span><span class="pre">Shape</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'query_nr,</span> <span class="pre">...</span> <span class="pre">result_shape'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Number</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#alts.modules.data_process.process.DataSourceProcess.query" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.data_process.process.DataSourceProcess.query_constrain">
+<span class="sig-name descname"><span class="pre">query_constrain</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../../core/data/constrains.html#alts.core.data.constrains.QueryConstrain" title="alts.core.data.constrains.QueryConstrain"><span class="pre">QueryConstrain</span></a></span></span><a class="headerlink" href="#alts.modules.data_process.process.DataSourceProcess.query_constrain" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.data_process.process.DataSourceProcess.result_constrain">
+<span class="sig-name descname"><span class="pre">result_constrain</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../../core/data/constrains.html#alts.core.data.constrains.ResultConstrain" title="alts.core.data.constrains.ResultConstrain"><span class="pre">ResultConstrain</span></a></span></span><a class="headerlink" href="#alts.modules.data_process.process.DataSourceProcess.result_constrain" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.modules.data_process.process.DelayedProcess">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.modules.data_process.process.</span></span><span class="sig-name descname"><span class="pre">DelayedProcess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.data_process.process.DelayedProcess" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../core/data_process/process.html#alts.core.data_process.process.Process" title="alts.core.data_process.process.Process"><code class="xref py py-class docutils literal notranslate"><span class="pre">Process</span></code></a>, <a class="reference internal" href="../../core/data/constrains.html#alts.core.data.constrains.DelayedConstrained" title="alts.core.data.constrains.DelayedConstrained"><code class="xref py py-class docutils literal notranslate"><span class="pre">DelayedConstrained</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.data_process.process.DelayedProcess.add_intermediate_results">
+<span class="sig-name descname"><span class="pre">add_intermediate_results</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.data_process.process.DelayedProcess.add_intermediate_results" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.data_process.process.DelayedProcess.add_results">
+<span class="sig-name descname"><span class="pre">add_results</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.data_process.process.DelayedProcess.add_results" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.data_process.process.DelayedProcess.added_data">
+<span class="sig-name descname"><span class="pre">added_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">queries</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">results</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.data_process.process.DelayedProcess.added_data" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.data_process.process.DelayedProcess.added_intermediate_data">
+<span class="sig-name descname"><span class="pre">added_intermediate_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">queries</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">results</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.data_process.process.DelayedProcess.added_intermediate_data" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.data_process.process.DelayedProcess.data_source">
+<span class="sig-name descname"><span class="pre">data_source</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../../core/oracle/data_source.html#alts.core.oracle.data_source.DataSource" title="alts.core.oracle.data_source.DataSource"><span class="pre">DataSource</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">NOTSET</span></em><a class="headerlink" href="#alts.modules.data_process.process.DelayedProcess.data_source" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.data_process.process.DelayedProcess.delayed_constrain">
+<span class="sig-name descname"><span class="pre">delayed_constrain</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../../core/data/constrains.html#alts.core.data.constrains.ResultConstrain" title="alts.core.data.constrains.ResultConstrain"><span class="pre">ResultConstrain</span></a></span></span><a class="headerlink" href="#alts.modules.data_process.process.DelayedProcess.delayed_constrain" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.data_process.process.DelayedProcess.delayed_query">
+<span class="sig-name descname"><span class="pre">delayed_query</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">NDArray</span><span class="p"><span class="pre">[</span></span><span class="pre">Shape</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'data_nr,</span> <span class="pre">...</span> <span class="pre">query_shape'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Number</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NDArray</span><span class="p"><span class="pre">[</span></span><span class="pre">Shape</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'data_nr,</span> <span class="pre">...</span> <span class="pre">result_shape'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Number</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#alts.modules.data_process.process.DelayedProcess.delayed_query" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.data_process.process.DelayedProcess.has_new_data">
+<span class="sig-name descname"><span class="pre">has_new_data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#alts.modules.data_process.process.DelayedProcess.has_new_data" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.data_process.process.DelayedProcess.post_init">
+<span class="sig-name descname"><span class="pre">post_init</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.data_process.process.DelayedProcess.post_init" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.data_process.process.DelayedProcess.query">
+<span class="sig-name descname"><span class="pre">query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">queries</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">NDArray</span><span class="p"><span class="pre">[</span></span><span class="pre">Shape</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'query_nr,</span> <span class="pre">...</span> <span class="pre">query_shape'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Number</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">NDArray</span><span class="p"><span class="pre">[</span></span><span class="pre">Shape</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'query_nr,</span> <span class="pre">...</span> <span class="pre">query_shape'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Number</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NDArray</span><span class="p"><span class="pre">[</span></span><span class="pre">Shape</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'query_nr,</span> <span class="pre">...</span> <span class="pre">result_shape'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Number</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#alts.modules.data_process.process.DelayedProcess.query" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.data_process.process.DelayedProcess.query_constrain">
+<span class="sig-name descname"><span class="pre">query_constrain</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../../core/data/constrains.html#alts.core.data.constrains.QueryConstrain" title="alts.core.data.constrains.QueryConstrain"><span class="pre">QueryConstrain</span></a></span></span><a class="headerlink" href="#alts.modules.data_process.process.DelayedProcess.query_constrain" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.data_process.process.DelayedProcess.ready">
+<span class="sig-name descname"><span class="pre">ready</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#alts.modules.data_process.process.DelayedProcess.ready" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.data_process.process.DelayedProcess.result_constrain">
+<span class="sig-name descname"><span class="pre">result_constrain</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../../core/data/constrains.html#alts.core.data.constrains.ResultConstrain" title="alts.core.data.constrains.ResultConstrain"><span class="pre">ResultConstrain</span></a></span></span><a class="headerlink" href="#alts.modules.data_process.process.DelayedProcess.result_constrain" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.data_process.process.DelayedProcess.step">
+<span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iteration</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.data_process.process.DelayedProcess.step" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.data_process.process.DelayedProcess.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.data_process.process.DelayedProcess.update" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.modules.data_process.process.DelayedStreamProcess">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.modules.data_process.process.</span></span><span class="sig-name descname"><span class="pre">DelayedStreamProcess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.data_process.process.DelayedStreamProcess" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#alts.modules.data_process.process.DelayedProcess" title="alts.modules.data_process.process.DelayedProcess"><code class="xref py py-class docutils literal notranslate"><span class="pre">DelayedProcess</span></code></a>, <a class="reference internal" href="#alts.modules.data_process.process.StreamProcess" title="alts.modules.data_process.process.StreamProcess"><code class="xref py py-class docutils literal notranslate"><span class="pre">StreamProcess</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.modules.data_process.process.IntegratingDSProcess">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.modules.data_process.process.</span></span><span class="sig-name descname"><span class="pre">IntegratingDSProcess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.data_process.process.IntegratingDSProcess" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#alts.modules.data_process.process.DelayedStreamProcess" title="alts.modules.data_process.process.DelayedStreamProcess"><code class="xref py py-class docutils literal notranslate"><span class="pre">DelayedStreamProcess</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.data_process.process.IntegratingDSProcess.added_data">
+<span class="sig-name descname"><span class="pre">added_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">queries</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">results</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.data_process.process.IntegratingDSProcess.added_data" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.data_process.process.IntegratingDSProcess.added_intermediate_data">
+<span class="sig-name descname"><span class="pre">added_intermediate_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">queries</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">results</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.data_process.process.IntegratingDSProcess.added_intermediate_data" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.data_process.process.IntegratingDSProcess.delayed_query">
+<span class="sig-name descname"><span class="pre">delayed_query</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">NDArray</span><span class="p"><span class="pre">[</span></span><span class="pre">Shape</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'data_nr,</span> <span class="pre">...</span> <span class="pre">query_shape'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Number</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NDArray</span><span class="p"><span class="pre">[</span></span><span class="pre">Shape</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'data_nr,</span> <span class="pre">...</span> <span class="pre">result_shape'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Number</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#alts.modules.data_process.process.IntegratingDSProcess.delayed_query" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.data_process.process.IntegratingDSProcess.end_time">
+<span class="sig-name descname"><span class="pre">end_time</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.0</span></em><a class="headerlink" href="#alts.modules.data_process.process.IntegratingDSProcess.end_time" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.data_process.process.IntegratingDSProcess.integrated_result">
+<span class="sig-name descname"><span class="pre">integrated_result</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">NDArray</span><span class="p"><span class="pre">[</span></span><span class="pre">Shape</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'data_nr,</span> <span class="pre">...</span> <span class="pre">output_shape'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Number</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#alts.modules.data_process.process.IntegratingDSProcess.integrated_result" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.data_process.process.IntegratingDSProcess.integration_time">
+<span class="sig-name descname"><span class="pre">integration_time</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#alts.modules.data_process.process.IntegratingDSProcess.integration_time" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.data_process.process.IntegratingDSProcess.sliding_window">
+<span class="sig-name descname"><span class="pre">sliding_window</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">NDArray</span><span class="p"><span class="pre">[</span></span><span class="pre">Shape</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'data_nr,</span> <span class="pre">...</span> <span class="pre">output_shape'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Number</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#alts.modules.data_process.process.IntegratingDSProcess.sliding_window" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.data_process.process.IntegratingDSProcess.start_time">
+<span class="sig-name descname"><span class="pre">start_time</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.0</span></em><a class="headerlink" href="#alts.modules.data_process.process.IntegratingDSProcess.start_time" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.data_process.process.IntegratingDSProcess.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.data_process.process.IntegratingDSProcess.update" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.modules.data_process.process.StreamProcess">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.modules.data_process.process.</span></span><span class="sig-name descname"><span class="pre">StreamProcess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.data_process.process.StreamProcess" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../core/data_process/process.html#alts.core.data_process.process.Process" title="alts.core.data_process.process.Process"><code class="xref py py-class docutils literal notranslate"><span class="pre">Process</span></code></a>, <a class="reference internal" href="../../core/subscriber.html#alts.core.subscriber.TimeSubscriber" title="alts.core.subscriber.TimeSubscriber"><code class="xref py py-class docutils literal notranslate"><span class="pre">TimeSubscriber</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.data_process.process.StreamProcess.post_init">
+<span class="sig-name descname"><span class="pre">post_init</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.data_process.process.StreamProcess.post_init" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.data_process.process.StreamProcess.stop_time">
+<span class="sig-name descname"><span class="pre">stop_time</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1000</span></em><a class="headerlink" href="#alts.modules.data_process.process.StreamProcess.stop_time" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.data_process.process.StreamProcess.time_behavior">
+<span class="sig-name descname"><span class="pre">time_behavior</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../../core/oracle/data_source.html#alts.core.oracle.data_source.TimeDataSource" title="alts.core.oracle.data_source.TimeDataSource"><span class="pre">TimeDataSource</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">NOTSET</span></em><a class="headerlink" href="#alts.modules.data_process.process.StreamProcess.time_behavior" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.data_process.process.StreamProcess.time_update">
+<span class="sig-name descname"><span class="pre">time_update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subscription</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.data_process.process.StreamProcess.time_update" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.modules.data_process.process.WindowDSProcess">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.modules.data_process.process.</span></span><span class="sig-name descname"><span class="pre">WindowDSProcess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.data_process.process.WindowDSProcess" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#alts.modules.data_process.process.DelayedStreamProcess" title="alts.modules.data_process.process.DelayedStreamProcess"><code class="xref py py-class docutils literal notranslate"><span class="pre">DelayedStreamProcess</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.data_process.process.WindowDSProcess.added_intermediate_data">
+<span class="sig-name descname"><span class="pre">added_intermediate_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">queries</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">results</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.data_process.process.WindowDSProcess.added_intermediate_data" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.data_process.process.WindowDSProcess.delayed_query">
+<span class="sig-name descname"><span class="pre">delayed_query</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">NDArray</span><span class="p"><span class="pre">[</span></span><span class="pre">Shape</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'data_nr,</span> <span class="pre">...</span> <span class="pre">query_shape'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Number</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NDArray</span><span class="p"><span class="pre">[</span></span><span class="pre">Shape</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'data_nr,</span> <span class="pre">...</span> <span class="pre">result_shape'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Number</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#alts.modules.data_process.process.WindowDSProcess.delayed_query" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.data_process.process.WindowDSProcess.post_init">
+<span class="sig-name descname"><span class="pre">post_init</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.data_process.process.WindowDSProcess.post_init" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.data_process.process.WindowDSProcess.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.data_process.process.WindowDSProcess.update" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.data_process.process.WindowDSProcess.window_size">
+<span class="sig-name descname"><span class="pre">window_size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#alts.modules.data_process.process.WindowDSProcess.window_size" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Process (Implementation)</a><ul>
+<li><a class="reference internal" href="#alts.modules.data_process.process.DataSourceProcess"><code class="docutils literal notranslate"><span class="pre">DataSourceProcess</span></code></a><ul>
+<li><a class="reference internal" href="#alts.modules.data_process.process.DataSourceProcess.data_source"><code class="docutils literal notranslate"><span class="pre">DataSourceProcess.data_source</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.data_process.process.DataSourceProcess.post_init"><code class="docutils literal notranslate"><span class="pre">DataSourceProcess.post_init()</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.data_process.process.DataSourceProcess.process_query"><code class="docutils literal notranslate"><span class="pre">DataSourceProcess.process_query()</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.data_process.process.DataSourceProcess.query"><code class="docutils literal notranslate"><span class="pre">DataSourceProcess.query()</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.data_process.process.DataSourceProcess.query_constrain"><code class="docutils literal notranslate"><span class="pre">DataSourceProcess.query_constrain()</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.data_process.process.DataSourceProcess.result_constrain"><code class="docutils literal notranslate"><span class="pre">DataSourceProcess.result_constrain()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#alts.modules.data_process.process.DelayedProcess"><code class="docutils literal notranslate"><span class="pre">DelayedProcess</span></code></a><ul>
+<li><a class="reference internal" href="#alts.modules.data_process.process.DelayedProcess.add_intermediate_results"><code class="docutils literal notranslate"><span class="pre">DelayedProcess.add_intermediate_results()</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.data_process.process.DelayedProcess.add_results"><code class="docutils literal notranslate"><span class="pre">DelayedProcess.add_results()</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.data_process.process.DelayedProcess.added_data"><code class="docutils literal notranslate"><span class="pre">DelayedProcess.added_data()</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.data_process.process.DelayedProcess.added_intermediate_data"><code class="docutils literal notranslate"><span class="pre">DelayedProcess.added_intermediate_data()</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.data_process.process.DelayedProcess.data_source"><code class="docutils literal notranslate"><span class="pre">DelayedProcess.data_source</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.data_process.process.DelayedProcess.delayed_constrain"><code class="docutils literal notranslate"><span class="pre">DelayedProcess.delayed_constrain()</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.data_process.process.DelayedProcess.delayed_query"><code class="docutils literal notranslate"><span class="pre">DelayedProcess.delayed_query()</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.data_process.process.DelayedProcess.has_new_data"><code class="docutils literal notranslate"><span class="pre">DelayedProcess.has_new_data</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.data_process.process.DelayedProcess.post_init"><code class="docutils literal notranslate"><span class="pre">DelayedProcess.post_init()</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.data_process.process.DelayedProcess.query"><code class="docutils literal notranslate"><span class="pre">DelayedProcess.query()</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.data_process.process.DelayedProcess.query_constrain"><code class="docutils literal notranslate"><span class="pre">DelayedProcess.query_constrain()</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.data_process.process.DelayedProcess.ready"><code class="docutils literal notranslate"><span class="pre">DelayedProcess.ready</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.data_process.process.DelayedProcess.result_constrain"><code class="docutils literal notranslate"><span class="pre">DelayedProcess.result_constrain()</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.data_process.process.DelayedProcess.step"><code class="docutils literal notranslate"><span class="pre">DelayedProcess.step()</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.data_process.process.DelayedProcess.update"><code class="docutils literal notranslate"><span class="pre">DelayedProcess.update()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#alts.modules.data_process.process.DelayedStreamProcess"><code class="docutils literal notranslate"><span class="pre">DelayedStreamProcess</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.data_process.process.IntegratingDSProcess"><code class="docutils literal notranslate"><span class="pre">IntegratingDSProcess</span></code></a><ul>
+<li><a class="reference internal" href="#alts.modules.data_process.process.IntegratingDSProcess.added_data"><code class="docutils literal notranslate"><span class="pre">IntegratingDSProcess.added_data()</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.data_process.process.IntegratingDSProcess.added_intermediate_data"><code class="docutils literal notranslate"><span class="pre">IntegratingDSProcess.added_intermediate_data()</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.data_process.process.IntegratingDSProcess.delayed_query"><code class="docutils literal notranslate"><span class="pre">IntegratingDSProcess.delayed_query()</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.data_process.process.IntegratingDSProcess.end_time"><code class="docutils literal notranslate"><span class="pre">IntegratingDSProcess.end_time</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.data_process.process.IntegratingDSProcess.integrated_result"><code class="docutils literal notranslate"><span class="pre">IntegratingDSProcess.integrated_result</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.data_process.process.IntegratingDSProcess.integration_time"><code class="docutils literal notranslate"><span class="pre">IntegratingDSProcess.integration_time</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.data_process.process.IntegratingDSProcess.sliding_window"><code class="docutils literal notranslate"><span class="pre">IntegratingDSProcess.sliding_window</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.data_process.process.IntegratingDSProcess.start_time"><code class="docutils literal notranslate"><span class="pre">IntegratingDSProcess.start_time</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.data_process.process.IntegratingDSProcess.update"><code class="docutils literal notranslate"><span class="pre">IntegratingDSProcess.update()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#alts.modules.data_process.process.StreamProcess"><code class="docutils literal notranslate"><span class="pre">StreamProcess</span></code></a><ul>
+<li><a class="reference internal" href="#alts.modules.data_process.process.StreamProcess.post_init"><code class="docutils literal notranslate"><span class="pre">StreamProcess.post_init()</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.data_process.process.StreamProcess.stop_time"><code class="docutils literal notranslate"><span class="pre">StreamProcess.stop_time</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.data_process.process.StreamProcess.time_behavior"><code class="docutils literal notranslate"><span class="pre">StreamProcess.time_behavior</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.data_process.process.StreamProcess.time_update"><code class="docutils literal notranslate"><span class="pre">StreamProcess.time_update()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#alts.modules.data_process.process.WindowDSProcess"><code class="docutils literal notranslate"><span class="pre">WindowDSProcess</span></code></a><ul>
+<li><a class="reference internal" href="#alts.modules.data_process.process.WindowDSProcess.added_intermediate_data"><code class="docutils literal notranslate"><span class="pre">WindowDSProcess.added_intermediate_data()</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.data_process.process.WindowDSProcess.delayed_query"><code class="docutils literal notranslate"><span class="pre">WindowDSProcess.delayed_query()</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.data_process.process.WindowDSProcess.post_init"><code class="docutils literal notranslate"><span class="pre">WindowDSProcess.post_init()</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.data_process.process.WindowDSProcess.update"><code class="docutils literal notranslate"><span class="pre">WindowDSProcess.update()</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.data_process.process.WindowDSProcess.window_size"><code class="docutils literal notranslate"><span class="pre">WindowDSProcess.window_size</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="../data_process.html"
+                          title="previous chapter">Data Process (Implementation)</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="time_source.html"
+                          title="next chapter">Time Source (Implementation)</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/modules/data_process/process.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+<div id="sidebarbutton" title="Collapse sidebar">
+<span>«</span>
+</div>
+
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="time_source.html" title="Time Source (Implementation)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../data_process.html" title="Data Process (Implementation)"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">ALTS-Documentation 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../modules.html" >Module Implementations</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../data_process.html" >Data Process (Implementation)</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Process (Implementation)</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2024, Benjamin Gors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
+    </div>
+  </body>
+</html>

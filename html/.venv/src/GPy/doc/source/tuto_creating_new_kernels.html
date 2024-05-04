@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Creating new kernels &#8212; ALTS-Documentation 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/classic.css?v=48851edf" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/css/functions.css?v=c671ca28" />
+    <link rel="stylesheet" href="../../../../../_static/css/functions.css" type="text/css" />
+    
+    <script src="../../../../../_static/documentation_options.js?v=1b390748"></script>
+    <script src="../../../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <script src="../../../../../_static/sidebar.js"></script>
+    
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../../../index.html">ALTS-Documentation 0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Creating new kernels</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="creating-new-kernels">
+<h1>Creating new kernels<a class="headerlink" href="#creating-new-kernels" title="Link to this heading">¶</a></h1>
+<p>We will see in this tutorial how to create new kernels in GPy. We will also give details on how to implement each function of the kernel and illustrate with a running example: the rational quadratic kernel.</p>
+<section id="structure-of-a-kernel-in-gpy">
+<h2>Structure of a kernel in GPy<a class="headerlink" href="#structure-of-a-kernel-in-gpy" title="Link to this heading">¶</a></h2>
+<p>In GPy a kernel object is made of a list of kernpart objects, which correspond to symmetric positive definite functions. More precisely, the kernel should be understood as the sum of the kernparts. In order to implement a new covariance, the following steps must be followed</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>implement the new covariance as a <code class="xref py py-class docutils literal notranslate"><span class="pre">GPy.kern.src.kern.Kern</span></code> object</p></li>
+<li><p>update the <code class="xref py py-mod docutils literal notranslate"><span class="pre">GPy.kern.src</span></code> file</p></li>
+</ol>
+</div></blockquote>
+<p>Theses three steps are detailed below.</p>
+</section>
+<section id="implementing-a-kern-object">
+<h2>Implementing a Kern object<a class="headerlink" href="#implementing-a-kern-object" title="Link to this heading">¶</a></h2>
+<p>We advise the reader to start with copy-pasting an existing kernel and
+to modify the new file. We will now give a description of the various
+functions that can be found in a Kern object, some of which are
+mandatory for the new kernel to work.</p>
+<section id="header">
+<h3>Header<a class="headerlink" href="#header" title="Link to this heading">¶</a></h3>
+<p>The header is similar to all kernels:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">.kern</span> <span class="kn">import</span> <span class="n">Kern</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">class</span> <span class="nc">RationalQuadratic</span><span class="p">(</span><span class="n">Kern</span><span class="p">):</span>
+</pre></div>
+</div>
+</section>
+<section id="gpy-kern-src-kern-kern-init-self-input-dim-param1-param2-args">
+<h3><code class="xref py py-func docutils literal notranslate"><span class="pre">GPy.kern.src.kern.Kern.__init__()</span></code> <code class="docutils literal notranslate"><span class="pre">(self,</span> <span class="pre">input_dim,</span> <span class="pre">param1,</span> <span class="pre">param2,</span> <span class="pre">*args)</span></code><a class="headerlink" href="#gpy-kern-src-kern-kern-init-self-input-dim-param1-param2-args" title="Link to this heading">¶</a></h3>
+<p>The implementation of this function in mandatory.</p>
+<p>For all Kerns the first parameter <code class="docutils literal notranslate"><span class="pre">input_dim</span></code> corresponds to the
+dimension of the input space, and the following parameters stand for
+the parameterization of the kernel.</p>
+<p>You have to call <code class="docutils literal notranslate"><span class="pre">super(&lt;class_name&gt;,</span> <span class="pre">self).__init__(input_dim,</span> <span class="pre">active_dims,</span>
+<span class="pre">name)</span></code> to make sure the input dimension (and possible dimension restrictions using active_dims) and name of the kernel are
+stored in the right place. These attributes are available as
+<code class="docutils literal notranslate"><span class="pre">self.input_dim</span></code> and <code class="docutils literal notranslate"><span class="pre">self.name</span></code> at runtime.  Parameterization is
+done by adding <code class="xref py py-class docutils literal notranslate"><span class="pre">Param</span></code>
+objects to <code class="docutils literal notranslate"><span class="pre">self</span></code> and use them as normal numpy <code class="docutils literal notranslate"><span class="pre">array-like</span></code> s in
+your code. The parameters have to be added by calling
+<code class="xref py py-func docutils literal notranslate"><span class="pre">link_parameters()</span></code>
+<code class="docutils literal notranslate"><span class="pre">(*parameters)</span></code> with the
+<code class="xref py py-class docutils literal notranslate"><span class="pre">Param</span></code> objects as
+arguments:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">.core.parameterization</span> <span class="kn">import</span> <span class="n">Param</span>
+
+<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">input_dim</span><span class="p">,</span><span class="n">variance</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span><span class="n">lengthscale</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span><span class="n">power</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span><span class="n">active_dims</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="nb">super</span><span class="p">(</span><span class="n">RationalQuadratic</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">input_dim</span><span class="p">,</span> <span class="n">active_dims</span><span class="p">,</span> <span class="s1">&#39;rat_quad&#39;</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">input_dim</span> <span class="o">==</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;For this kernel we assume input_dim=1&quot;</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">variance</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="s1">&#39;variance&#39;</span><span class="p">,</span> <span class="n">variance</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">lengthscale</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="s1">&#39;lengtscale&#39;</span><span class="p">,</span> <span class="n">lengthscale</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">power</span> <span class="o">=</span> <span class="n">Param</span><span class="p">(</span><span class="s1">&#39;power&#39;</span><span class="p">,</span> <span class="n">power</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">link_parameters</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">variance</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">lengthscale</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">power</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>From now on you can use the parameters <code class="docutils literal notranslate"><span class="pre">self.variance,</span>
+<span class="pre">self.lengthscale,</span> <span class="pre">self.power</span></code> as normal numpy <code class="docutils literal notranslate"><span class="pre">array-like</span></code> s in your
+code. Updates from the optimization routine will be done
+automatically.</p>
+</section>
+<section id="parameters-changed-self">
+<h3><code class="xref py py-func docutils literal notranslate"><span class="pre">parameters_changed()</span></code> <code class="docutils literal notranslate"><span class="pre">(self)</span></code><a class="headerlink" href="#parameters-changed-self" title="Link to this heading">¶</a></h3>
+<p>The implementation of this function is optional.</p>
+<p>This functions is called as a callback upon each successful change to the parameters. If
+one optimization step was successfull and the parameters (linked by
+<code class="xref py py-func docutils literal notranslate"><span class="pre">link_parameters()</span></code>
+<code class="docutils literal notranslate"><span class="pre">(*parameters)</span></code>) are changed, this callback function will be called. This callback may be used to
+update precomputations for the kernel. Do not implement the
+gradient updates here, as gradient updates are performed by the model enclosing
+the kernel. In this example, we issue a no-op:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">parameters_changed</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="c1"># nothing todo here</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</section>
+<section id="k-self-x-x2">
+<h3><code class="xref py py-func docutils literal notranslate"><span class="pre">K()</span></code> <code class="docutils literal notranslate"><span class="pre">(self,X,X2)</span></code><a class="headerlink" href="#k-self-x-x2" title="Link to this heading">¶</a></h3>
+<p>The implementation of this function in mandatory.</p>
+<p>This function is used to compute the covariance matrix associated with
+the inputs X, X2 (np.arrays with arbitrary number of lines,
+<span class="math notranslate nohighlight">\(n_1\)</span>, <span class="math notranslate nohighlight">\(n_2\)</span>, corresponding to the number of samples over which to calculate covariance)
+and <code class="docutils literal notranslate"><span class="pre">self.input_dim</span></code> columns.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">K</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">X</span><span class="p">,</span><span class="n">X2</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">X2</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="n">X2</span> <span class="o">=</span> <span class="n">X</span>
+    <span class="n">dist2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">((</span><span class="n">X</span><span class="o">-</span><span class="n">X2</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">lengthscale</span><span class="p">)</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">variance</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">dist2</span><span class="o">/</span><span class="mf">2.</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">power</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="kdiag-self-x">
+<h3><code class="xref py py-func docutils literal notranslate"><span class="pre">Kdiag()</span></code> <code class="docutils literal notranslate"><span class="pre">(self,X)</span></code><a class="headerlink" href="#kdiag-self-x" title="Link to this heading">¶</a></h3>
+<p>The implementation of this function is mandatory.</p>
+<p>This function is similar to <code class="docutils literal notranslate"><span class="pre">K</span></code> but it computes only the values of
+the kernel on the diagonal. Thus, <code class="docutils literal notranslate"><span class="pre">target</span></code> is a 1-dimensional
+np.array of length <span class="math notranslate nohighlight">\(n \times 1\)</span>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Kdiag</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">X</span><span class="p">):</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">variance</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</section>
+<section id="update-gradients-full-self-dl-dk-x-x2-none">
+<h3><code class="xref py py-func docutils literal notranslate"><span class="pre">update_gradients_full()</span></code> <code class="docutils literal notranslate"><span class="pre">(self,</span> <span class="pre">dL_dK,</span> <span class="pre">X,</span> <span class="pre">X2=None)</span></code><a class="headerlink" href="#update-gradients-full-self-dl-dk-x-x2-none" title="Link to this heading">¶</a></h3>
+<p>This function is required for the optimization of the parameters.</p>
+<p>Computes the gradients and sets them on the parameters of this model.
+For example, if the kernel is parameterized by
+<span class="math notranslate nohighlight">\(\sigma^2, \theta\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial L}{\partial\sigma^2}
+ = \frac{\partial L}{\partial K} \frac{\partial K}{\partial\sigma^2}\]</div>
+<p>is added to the gradient of <span class="math notranslate nohighlight">\(\sigma^2\)</span>: <code class="docutils literal notranslate"><span class="pre">self.variance.gradient</span> <span class="pre">=</span> <span class="pre">&lt;gradient&gt;</span></code>
+and</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial L}{\partial\theta}
+ = \frac{\partial L}{\partial K} \frac{\partial K}{\partial\theta}\]</div>
+<p>to <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">update_gradients_full</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dL_dK</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">X2</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">X2</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="n">X2</span> <span class="o">=</span> <span class="n">X</span>
+    <span class="n">dist2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">((</span><span class="n">X</span><span class="o">-</span><span class="n">X2</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">lengthscale</span><span class="p">)</span>
+
+    <span class="n">dvar</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">dist2</span><span class="o">/</span><span class="mf">2.</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">power</span><span class="p">)</span>
+    <span class="n">dl</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">power</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">variance</span> <span class="o">*</span> <span class="n">dist2</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">lengthscale</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">dist2</span><span class="o">/</span><span class="mf">2.</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">power</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">power</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">dp</span> <span class="o">=</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">variance</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">dist2</span><span class="o">/</span><span class="mf">2.</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">dist2</span><span class="o">/</span><span class="mf">2.</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">power</span><span class="p">)</span>
+
+    <span class="bp">self</span><span class="o">.</span><span class="n">variance</span><span class="o">.</span><span class="n">gradient</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">dvar</span><span class="o">*</span><span class="n">dL_dK</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">lengthscale</span><span class="o">.</span><span class="n">gradient</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">dl</span><span class="o">*</span><span class="n">dL_dK</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">power</span><span class="o">.</span><span class="n">gradient</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">dp</span><span class="o">*</span><span class="n">dL_dK</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="update-gradients-diag-self-dl-dkdiag-x-target">
+<h3><code class="xref py py-func docutils literal notranslate"><span class="pre">update_gradients_diag()</span></code> <code class="docutils literal notranslate"><span class="pre">(self,dL_dKdiag,X,target)</span></code><a class="headerlink" href="#update-gradients-diag-self-dl-dkdiag-x-target" title="Link to this heading">¶</a></h3>
+<p>This function is required for BGPLVM, sparse models and uncertain inputs.</p>
+<p>As previously, target is an <code class="docutils literal notranslate"><span class="pre">self.num_params</span></code> array and</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial L}{\partial Kdiag}
+ \frac{\partial Kdiag}{\partial param}\]</div>
+<p>is set to each <code class="docutils literal notranslate"><span class="pre">param</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">update_gradients_diag</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dL_dKdiag</span><span class="p">,</span> <span class="n">X</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">variance</span><span class="o">.</span><span class="n">gradient</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">dL_dKdiag</span><span class="p">)</span>
+    <span class="c1"># here self.lengthscale and self.power have no influence on Kdiag so target[1:] are unchanged</span>
+</pre></div>
+</div>
+</section>
+<section id="gradients-x-self-dl-dk-x-x2">
+<h3><code class="xref py py-func docutils literal notranslate"><span class="pre">gradients_X()</span></code> <code class="docutils literal notranslate"><span class="pre">(self,dL_dK,</span> <span class="pre">X,</span> <span class="pre">X2)</span></code><a class="headerlink" href="#gradients-x-self-dl-dk-x-x2" title="Link to this heading">¶</a></h3>
+<p>This function is required for GPLVM, BGPLVM, sparse models and uncertain inputs.</p>
+<p>Computes the derivative of the likelihood with respect to the inputs
+<code class="docutils literal notranslate"><span class="pre">X</span></code> (a <span class="math notranslate nohighlight">\(n \times q\)</span> np.array), that is, it calculates the quantity:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial L}{\partial K} \frac{\partial K}{\partial X}\]</div>
+<p>The partial derivative matrix is, in this case, comes out as an <span class="math notranslate nohighlight">\(n \times q\)</span> np.array.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gradients_X</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">dL_dK</span><span class="p">,</span><span class="n">X</span><span class="p">,</span><span class="n">X2</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;derivative of the likelihood with respect to X, calculated using dL_dK*dK_dX&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">X2</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="n">X2</span> <span class="o">=</span> <span class="n">X</span>
+    <span class="n">dist2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">square</span><span class="p">((</span><span class="n">X</span><span class="o">-</span><span class="n">X2</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">lengthscale</span><span class="p">)</span>
+
+    <span class="n">dK_dX</span> <span class="o">=</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">variance</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">power</span> <span class="o">*</span> <span class="p">(</span><span class="n">X</span><span class="o">-</span><span class="n">X2</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">lengthscale</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span>  <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">dist2</span><span class="o">/</span><span class="mf">2.</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">lengthscale</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">power</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">dL_dK</span><span class="o">*</span><span class="n">dK_dX</span><span class="p">,</span><span class="mi">1</span><span class="p">)[:,</span><span class="kc">None</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Were the number of parameters to be larger than 1 or the number of dimensions likewise any larger
+than 1, the calculated partial derivitive would be a 3- or 4-tensor.</p>
+</section>
+<section id="gradients-x-diag-self-dl-dkdiag-x">
+<h3><code class="xref py py-func docutils literal notranslate"><span class="pre">gradients_X_diag()</span></code> <code class="docutils literal notranslate"><span class="pre">(self,dL_dKdiag,X)</span></code><a class="headerlink" href="#gradients-x-diag-self-dl-dkdiag-x" title="Link to this heading">¶</a></h3>
+<p>This function is required for BGPLVM, sparse models and uncertain
+inputs. As for <code class="docutils literal notranslate"><span class="pre">dKdiag_dtheta</span></code>,</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial L}{\partial Kdiag} \frac{\partial Kdiag}{\partial X}\]</div>
+<p>is added to each element of target.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gradients_X_diag</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">dL_dKdiag</span><span class="p">,</span><span class="n">X</span><span class="p">):</span>
+    <span class="c1"># no diagonal gradients</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</section>
+<section id="second-order-derivatives">
+<h3><strong>Second order derivatives</strong><a class="headerlink" href="#second-order-derivatives" title="Link to this heading">¶</a></h3>
+<p>These functions are required for the magnification factor and are the same as the first order gradients for X, but
+as the second order derivatives:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial^2 K}{\partial X\partial X2}\]</div>
+<ul class="simple">
+<li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">GPy.kern.src.kern.gradients_XX()</span></code> <code class="docutils literal notranslate"><span class="pre">(self,dL_dK,</span> <span class="pre">X,</span> <span class="pre">X2)</span></code></p></li>
+<li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">GPy.kern.src.kern.gradients_XX_diag()</span></code> <code class="docutils literal notranslate"><span class="pre">(self,dL_dKdiag,</span> <span class="pre">X)</span></code></p></li>
+</ul>
+</section>
+<section id="psi-statistics">
+<h3><strong>Psi statistics</strong><a class="headerlink" href="#psi-statistics" title="Link to this heading">¶</a></h3>
+<p>The psi statistics and their derivatives are required for BGPLVM and
+GPS with uncertain inputs only, the expressions are as follows</p>
+<ul>
+<li><dl>
+<dt><cite>psi0(self, Z, variational_posterior)</cite></dt><dd><div class="math notranslate nohighlight">
+\[\psi_0 = \sum_{i=0}^{n}E_{q(X)}[k(X_i, X_i)]\]</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><cite>psi1(self, Z, variational_posterior)</cite>::</dt><dd><div class="math notranslate nohighlight">
+\[\psi_1^{n,m} = E_{q(X)}[k(X_n, Z_m)]\]</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><cite>psi2(self, Z, variational_posterior)</cite></dt><dd><div class="math notranslate nohighlight">
+\[\psi_2^{m,m'} = \sum_{i=0}^{n}E_{q(X)}[ k(Z_m, X_i) k(X_i, Z_{m'})]\]</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt><cite>psi2n(self, Z, variational_posterior)</cite></dt><dd><div class="math notranslate nohighlight">
+\[\psi_2^{n,m,m'} = E_{q(X)}[ k(Z_m, X_n) k(X_n, Z_{m'})]\]</div>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Creating new kernels</a><ul>
+<li><a class="reference internal" href="#structure-of-a-kernel-in-gpy">Structure of a kernel in GPy</a></li>
+<li><a class="reference internal" href="#implementing-a-kern-object">Implementing a Kern object</a><ul>
+<li><a class="reference internal" href="#header">Header</a></li>
+<li><a class="reference internal" href="#gpy-kern-src-kern-kern-init-self-input-dim-param1-param2-args"><code class="xref py py-func docutils literal notranslate"><span class="pre">GPy.kern.src.kern.Kern.__init__()</span></code> <code class="docutils literal notranslate"><span class="pre">(self,</span> <span class="pre">input_dim,</span> <span class="pre">param1,</span> <span class="pre">param2,</span> <span class="pre">*args)</span></code></a></li>
+<li><a class="reference internal" href="#parameters-changed-self"><code class="xref py py-func docutils literal notranslate"><span class="pre">parameters_changed()</span></code> <code class="docutils literal notranslate"><span class="pre">(self)</span></code></a></li>
+<li><a class="reference internal" href="#k-self-x-x2"><code class="xref py py-func docutils literal notranslate"><span class="pre">K()</span></code> <code class="docutils literal notranslate"><span class="pre">(self,X,X2)</span></code></a></li>
+<li><a class="reference internal" href="#kdiag-self-x"><code class="xref py py-func docutils literal notranslate"><span class="pre">Kdiag()</span></code> <code class="docutils literal notranslate"><span class="pre">(self,X)</span></code></a></li>
+<li><a class="reference internal" href="#update-gradients-full-self-dl-dk-x-x2-none"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_gradients_full()</span></code> <code class="docutils literal notranslate"><span class="pre">(self,</span> <span class="pre">dL_dK,</span> <span class="pre">X,</span> <span class="pre">X2=None)</span></code></a></li>
+<li><a class="reference internal" href="#update-gradients-diag-self-dl-dkdiag-x-target"><code class="xref py py-func docutils literal notranslate"><span class="pre">update_gradients_diag()</span></code> <code class="docutils literal notranslate"><span class="pre">(self,dL_dKdiag,X,target)</span></code></a></li>
+<li><a class="reference internal" href="#gradients-x-self-dl-dk-x-x2"><code class="xref py py-func docutils literal notranslate"><span class="pre">gradients_X()</span></code> <code class="docutils literal notranslate"><span class="pre">(self,dL_dK,</span> <span class="pre">X,</span> <span class="pre">X2)</span></code></a></li>
+<li><a class="reference internal" href="#gradients-x-diag-self-dl-dkdiag-x"><code class="xref py py-func docutils literal notranslate"><span class="pre">gradients_X_diag()</span></code> <code class="docutils literal notranslate"><span class="pre">(self,dL_dKdiag,X)</span></code></a></li>
+<li><a class="reference internal" href="#second-order-derivatives"><strong>Second order derivatives</strong></a></li>
+<li><a class="reference internal" href="#psi-statistics"><strong>Psi statistics</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../../../_sources/.venv/src/GPy/doc/source/tuto_creating_new_kernels.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+<div id="sidebarbutton" title="Collapse sidebar">
+<span>«</span>
+</div>
+
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../../../index.html">ALTS-Documentation 0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Creating new kernels</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2024, Benjamin Gors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
+    </div>
+  </body>
+</html>

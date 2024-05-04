@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Stopping Criteria (Implementation) &#8212; ALTS-Documentation 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=48851edf" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/functions.css?v=c671ca28" />
+    <link rel="stylesheet" href="../_static/css/functions.css" type="text/css" />
+    
+    <script src="../_static/documentation_options.js?v=1b390748"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <script src="../_static/sidebar.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Queried Data Pool (Implementation)" href="queried_data_pool.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="queried_data_pool.html" title="Queried Data Pool (Implementation)"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">ALTS-Documentation 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../modules.html" accesskey="U">Module Implementations</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Stopping Criteria (Implementation)</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-alts.modules.stopping_criteria">
+<span id="stopping-criteria-implementation"></span><h1>Stopping Criteria (Implementation)<a class="headerlink" href="#module-alts.modules.stopping_criteria" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.modules.stopping_criteria.DataExhaustedStoppingCriteria">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.modules.stopping_criteria.</span></span><span class="sig-name descname"><span class="pre">DataExhaustedStoppingCriteria</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.stopping_criteria.DataExhaustedStoppingCriteria" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../core/stopping_criteria.html#alts.core.stopping_criteria.StoppingCriteria" title="alts.core.stopping_criteria.StoppingCriteria"><code class="xref py py-class docutils literal notranslate"><span class="pre">StoppingCriteria</span></code></a></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="alts.modules.stopping_criteria.DataExhaustedStoppingCriteria.next">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">next</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#alts.modules.stopping_criteria.DataExhaustedStoppingCriteria.next" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.modules.stopping_criteria.TimeStoppingCriteria">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.modules.stopping_criteria.</span></span><span class="sig-name descname"><span class="pre">TimeStoppingCriteria</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.stopping_criteria.TimeStoppingCriteria" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../core/stopping_criteria.html#alts.core.stopping_criteria.StoppingCriteria" title="alts.core.stopping_criteria.StoppingCriteria"><code class="xref py py-class docutils literal notranslate"><span class="pre">StoppingCriteria</span></code></a></p>
+<dl class="py property">
+<dt class="sig sig-object py" id="alts.modules.stopping_criteria.TimeStoppingCriteria.next">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">next</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#alts.modules.stopping_criteria.TimeStoppingCriteria.next" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.stopping_criteria.TimeStoppingCriteria.stop_time">
+<span class="sig-name descname"><span class="pre">stop_time</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">NOTSET</span></em><a class="headerlink" href="#alts.modules.stopping_criteria.TimeStoppingCriteria.stop_time" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Stopping Criteria (Implementation)</a><ul>
+<li><a class="reference internal" href="#alts.modules.stopping_criteria.DataExhaustedStoppingCriteria"><code class="docutils literal notranslate"><span class="pre">DataExhaustedStoppingCriteria</span></code></a><ul>
+<li><a class="reference internal" href="#alts.modules.stopping_criteria.DataExhaustedStoppingCriteria.next"><code class="docutils literal notranslate"><span class="pre">DataExhaustedStoppingCriteria.next</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#alts.modules.stopping_criteria.TimeStoppingCriteria"><code class="docutils literal notranslate"><span class="pre">TimeStoppingCriteria</span></code></a><ul>
+<li><a class="reference internal" href="#alts.modules.stopping_criteria.TimeStoppingCriteria.next"><code class="docutils literal notranslate"><span class="pre">TimeStoppingCriteria.next</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.stopping_criteria.TimeStoppingCriteria.stop_time"><code class="docutils literal notranslate"><span class="pre">TimeStoppingCriteria.stop_time</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="queried_data_pool.html"
+                          title="previous chapter">Queried Data Pool (Implementation)</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/modules/stopping_criteria.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+<div id="sidebarbutton" title="Collapse sidebar">
+<span>«</span>
+</div>
+
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="queried_data_pool.html" title="Queried Data Pool (Implementation)"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">ALTS-Documentation 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../modules.html" >Module Implementations</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Stopping Criteria (Implementation)</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2024, Benjamin Gors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Blueprint (Implementation) &#8212; ALTS-Documentation 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=48851edf" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/functions.css?v=c671ca28" />
+    <link rel="stylesheet" href="../_static/css/functions.css" type="text/css" />
+    
+    <script src="../_static/documentation_options.js?v=1b390748"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <script src="../_static/sidebar.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Data Sampler (Implementation)" href="data_sampler.html" />
+    <link rel="prev" title="Behavior (Implementation)" href="behavior.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="data_sampler.html" title="Data Sampler (Implementation)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="behavior.html" title="Behavior (Implementation)"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">ALTS-Documentation 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../modules.html" accesskey="U">Module Implementations</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Blueprint (Implementation)</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-alts.modules.blueprint">
+<span id="blueprint-implementation"></span><h1>Blueprint (Implementation)<a class="headerlink" href="#module-alts.modules.blueprint" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.modules.blueprint.BaselineBlueprint">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.modules.blueprint.</span></span><span class="sig-name descname"><span class="pre">BaselineBlueprint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">repeat:</span> <span class="pre">'int'</span> <span class="pre">=</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_source:</span> <span class="pre">'TimeSource'</span> <span class="pre">=</span> <span class="pre">IterationTimeSource(start_time=0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_step=1)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">oracles:</span> <span class="pre">'Oracles'</span> <span class="pre">=</span> <span class="pre">POracles(process=NOTSET)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_pools:</span> <span class="pre">'DataPools'</span> <span class="pre">=</span> <span class="pre">ResultDataPools(result=NOTSET)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">process:</span> <span class="pre">'Process'</span> <span class="pre">=</span> <span class="pre">DataSourceProcess(data_source=NOTSET)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stopping_criteria:</span> <span class="pre">'StoppingCriteria'</span> <span class="pre">=</span> <span class="pre">TimeStoppingCriteria(stop_time=NOTSET)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">experiment_modules:</span> <span class="pre">'ExperimentModules'</span> <span class="pre">=</span> <span class="pre">InitQueryExperimentModules(query_selector=NOTSET</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_query_sampler=NOTSET)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evaluators:</span> <span class="pre">'Iterable[Evaluator]'</span> <span class="pre">=</span> <span class="pre">(PlotAllDataPointsEvaluator(folder='fig'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_path='./eval'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interactive=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fig_name='AllData')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;alts.modules.evaluator.PrintExpTimeEvaluator</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7f1dcd8398b0&gt;)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exp_name:</span> <span class="pre">'Optional[str]'</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exp_path:</span> <span class="pre">'Optional[str]'</span> <span class="pre">=</span> <span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.blueprint.BaselineBlueprint" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../core/blueprint.html#alts.core.blueprint.Blueprint" title="alts.core.blueprint.Blueprint"><code class="xref py py-class docutils literal notranslate"><span class="pre">Blueprint</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.blueprint.BaselineBlueprint.data_pools">
+<span class="sig-name descname"><span class="pre">data_pools</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../core/data/data_pools.html#alts.core.data.data_pools.DataPools" title="alts.core.data.data_pools.DataPools"><span class="pre">DataPools</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">ResultDataPools(result=NOTSET)</span></em><a class="headerlink" href="#alts.modules.blueprint.BaselineBlueprint.data_pools" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.blueprint.BaselineBlueprint.evaluators">
+<span class="sig-name descname"><span class="pre">evaluators</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="../core/evaluator.html#alts.core.evaluator.Evaluator" title="alts.core.evaluator.Evaluator"><span class="pre">Evaluator</span></a><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(PlotAllDataPointsEvaluator(folder='fig',</span> <span class="pre">root_path='./eval',</span> <span class="pre">interactive=False,</span> <span class="pre">fig_name='AllData'),</span> <span class="pre">&lt;alts.modules.evaluator.PrintExpTimeEvaluator</span> <span class="pre">object&gt;)</span></em><a class="headerlink" href="#alts.modules.blueprint.BaselineBlueprint.evaluators" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.blueprint.BaselineBlueprint.experiment_modules">
+<span class="sig-name descname"><span class="pre">experiment_modules</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../core/experiment_modules.html#alts.core.experiment_modules.ExperimentModules" title="alts.core.experiment_modules.ExperimentModules"><span class="pre">ExperimentModules</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">InitQueryExperimentModules(query_selector=NOTSET,</span> <span class="pre">initial_query_sampler=NOTSET)</span></em><a class="headerlink" href="#alts.modules.blueprint.BaselineBlueprint.experiment_modules" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.blueprint.BaselineBlueprint.oracles">
+<span class="sig-name descname"><span class="pre">oracles</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../core/oracle/oracles.html#alts.core.oracle.oracles.Oracles" title="alts.core.oracle.oracles.Oracles"><span class="pre">Oracles</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">POracles(process=NOTSET)</span></em><a class="headerlink" href="#alts.modules.blueprint.BaselineBlueprint.oracles" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.blueprint.BaselineBlueprint.process">
+<span class="sig-name descname"><span class="pre">process</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../core/data_process/process.html#alts.core.data_process.process.Process" title="alts.core.data_process.process.Process"><span class="pre">Process</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">DataSourceProcess(data_source=NOTSET)</span></em><a class="headerlink" href="#alts.modules.blueprint.BaselineBlueprint.process" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.blueprint.BaselineBlueprint.repeat">
+<span class="sig-name descname"><span class="pre">repeat</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#alts.modules.blueprint.BaselineBlueprint.repeat" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.blueprint.BaselineBlueprint.stopping_criteria">
+<span class="sig-name descname"><span class="pre">stopping_criteria</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../core/stopping_criteria.html#alts.core.stopping_criteria.StoppingCriteria" title="alts.core.stopping_criteria.StoppingCriteria"><span class="pre">StoppingCriteria</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">TimeStoppingCriteria(stop_time=NOTSET)</span></em><a class="headerlink" href="#alts.modules.blueprint.BaselineBlueprint.stopping_criteria" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.blueprint.BaselineBlueprint.time_source">
+<span class="sig-name descname"><span class="pre">time_source</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../core/data_process/time_source.html#alts.core.data_process.time_source.TimeSource" title="alts.core.data_process.time_source.TimeSource"><span class="pre">TimeSource</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">IterationTimeSource(start_time=0,</span> <span class="pre">time_step=1)</span></em><a class="headerlink" href="#alts.modules.blueprint.BaselineBlueprint.time_source" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Blueprint (Implementation)</a><ul>
+<li><a class="reference internal" href="#alts.modules.blueprint.BaselineBlueprint"><code class="docutils literal notranslate"><span class="pre">BaselineBlueprint</span></code></a><ul>
+<li><a class="reference internal" href="#alts.modules.blueprint.BaselineBlueprint.data_pools"><code class="docutils literal notranslate"><span class="pre">BaselineBlueprint.data_pools</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.blueprint.BaselineBlueprint.evaluators"><code class="docutils literal notranslate"><span class="pre">BaselineBlueprint.evaluators</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.blueprint.BaselineBlueprint.experiment_modules"><code class="docutils literal notranslate"><span class="pre">BaselineBlueprint.experiment_modules</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.blueprint.BaselineBlueprint.oracles"><code class="docutils literal notranslate"><span class="pre">BaselineBlueprint.oracles</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.blueprint.BaselineBlueprint.process"><code class="docutils literal notranslate"><span class="pre">BaselineBlueprint.process</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.blueprint.BaselineBlueprint.repeat"><code class="docutils literal notranslate"><span class="pre">BaselineBlueprint.repeat</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.blueprint.BaselineBlueprint.stopping_criteria"><code class="docutils literal notranslate"><span class="pre">BaselineBlueprint.stopping_criteria</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.blueprint.BaselineBlueprint.time_source"><code class="docutils literal notranslate"><span class="pre">BaselineBlueprint.time_source</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="behavior.html"
+                          title="previous chapter">Behavior (Implementation)</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="data_sampler.html"
+                          title="next chapter">Data Sampler (Implementation)</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/modules/blueprint.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+<div id="sidebarbutton" title="Collapse sidebar">
+<span>«</span>
+</div>
+
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="data_sampler.html" title="Data Sampler (Implementation)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="behavior.html" title="Behavior (Implementation)"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">ALTS-Documentation 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../modules.html" >Module Implementations</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Blueprint (Implementation)</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2024, Benjamin Gors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Query Queue (Core) &#8212; ALTS-Documentation 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/classic.css?v=48851edf" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/functions.css?v=c671ca28" />
+    <link rel="stylesheet" href="../../_static/css/functions.css" type="text/css" />
+    
+    <script src="../../_static/documentation_options.js?v=1b390748"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <script src="../../_static/sidebar.js"></script>
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Query (Core)" href="../query.html" />
+    <link rel="prev" title="Oracles (Core)" href="oracles.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../query.html" title="Query (Core)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="oracles.html" title="Oracles (Core)"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">ALTS-Documentation 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../core.html" >Core Modules</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../oracle.html" accesskey="U">Oracle Modules (Core)</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Query Queue (Core)</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-alts.core.oracle.query_queue">
+<span id="query-queue-core"></span><h1>Query Queue (Core)<a class="headerlink" href="#module-alts.core.oracle.query_queue" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.core.oracle.query_queue.QueryQueue">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.core.oracle.query_queue.</span></span><span class="sig-name descname"><span class="pre">QueryQueue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.core.oracle.query_queue.QueryQueue" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../subscribable.html#alts.core.subscribable.DelayedPublisher" title="alts.core.subscribable.DelayedPublisher"><code class="xref py py-class docutils literal notranslate"><span class="pre">DelayedPublisher</span></code></a>, <a class="reference internal" href="../data/constrains.html#alts.core.data.constrains.QueryConstrained" title="alts.core.data.constrains.QueryConstrained"><code class="xref py py-class docutils literal notranslate"><span class="pre">QueryConstrained</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.core.oracle.query_queue.QueryQueue.add">
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">queries</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">NDArray</span><span class="p"><span class="pre">[</span></span><span class="pre">Shape</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'query_nr,</span> <span class="pre">...</span> <span class="pre">query_shape'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Number</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.core.oracle.query_queue.QueryQueue.add" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="alts.core.oracle.query_queue.QueryQueue.count">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">count</span></span><a class="headerlink" href="#alts.core.oracle.query_queue.QueryQueue.count" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="alts.core.oracle.query_queue.QueryQueue.empty">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">empty</span></span><a class="headerlink" href="#alts.core.oracle.query_queue.QueryQueue.empty" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="alts.core.oracle.query_queue.QueryQueue.first">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">first</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">NDArray</span><span class="p"><span class="pre">[</span></span><span class="pre">Shape</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'1,</span> <span class="pre">...</span> <span class="pre">query_shape'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Number</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#alts.core.oracle.query_queue.QueryQueue.first" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="alts.core.oracle.query_queue.QueryQueue.last">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">last</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">NDArray</span><span class="p"><span class="pre">[</span></span><span class="pre">Shape</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'1,</span> <span class="pre">...</span> <span class="pre">query_shape'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Number</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#alts.core.oracle.query_queue.QueryQueue.last" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="alts.core.oracle.query_queue.QueryQueue.latest_add">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">latest_add</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">NDArray</span><span class="p"><span class="pre">[</span></span><span class="pre">Shape</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'1,</span> <span class="pre">...</span> <span class="pre">query_shape'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Number</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#alts.core.oracle.query_queue.QueryQueue.latest_add" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="alts.core.oracle.query_queue.QueryQueue.latest_pop">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">latest_pop</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">NDArray</span><span class="p"><span class="pre">[</span></span><span class="pre">Shape</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'1,</span> <span class="pre">...</span> <span class="pre">query_shape'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Number</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#alts.core.oracle.query_queue.QueryQueue.latest_pop" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.core.oracle.query_queue.QueryQueue.pop">
+<span class="sig-name descname"><span class="pre">pop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_nr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">NDArray</span><span class="p"><span class="pre">[</span></span><span class="pre">Shape</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'query_nr,</span> <span class="pre">...</span> <span class="pre">query_shape'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Number</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#alts.core.oracle.query_queue.QueryQueue.pop" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.core.oracle.query_queue.QueryQueue.post_init">
+<span class="sig-name descname"><span class="pre">post_init</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#alts.core.oracle.query_queue.QueryQueue.post_init" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.core.oracle.query_queue.QueryQueue.queries">
+<span class="sig-name descname"><span class="pre">queries</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">NDArray</span><span class="p"><span class="pre">[</span></span><span class="pre">Shape</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'query_nr,</span> <span class="pre">...</span> <span class="pre">query_shape'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Number</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#alts.core.oracle.query_queue.QueryQueue.queries" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.core.oracle.query_queue.QueryQueue.query_constrain">
+<span class="sig-name descname"><span class="pre">query_constrain</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="../data/constrains.html#alts.core.data.constrains.QueryConstrain" title="alts.core.data.constrains.QueryConstrain"><span class="pre">QueryConstrain</span></a></span></span><a class="headerlink" href="#alts.core.oracle.query_queue.QueryQueue.query_constrain" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Query Queue (Core)</a><ul>
+<li><a class="reference internal" href="#alts.core.oracle.query_queue.QueryQueue"><code class="docutils literal notranslate"><span class="pre">QueryQueue</span></code></a><ul>
+<li><a class="reference internal" href="#alts.core.oracle.query_queue.QueryQueue.add"><code class="docutils literal notranslate"><span class="pre">QueryQueue.add()</span></code></a></li>
+<li><a class="reference internal" href="#alts.core.oracle.query_queue.QueryQueue.count"><code class="docutils literal notranslate"><span class="pre">QueryQueue.count</span></code></a></li>
+<li><a class="reference internal" href="#alts.core.oracle.query_queue.QueryQueue.empty"><code class="docutils literal notranslate"><span class="pre">QueryQueue.empty</span></code></a></li>
+<li><a class="reference internal" href="#alts.core.oracle.query_queue.QueryQueue.first"><code class="docutils literal notranslate"><span class="pre">QueryQueue.first</span></code></a></li>
+<li><a class="reference internal" href="#alts.core.oracle.query_queue.QueryQueue.last"><code class="docutils literal notranslate"><span class="pre">QueryQueue.last</span></code></a></li>
+<li><a class="reference internal" href="#alts.core.oracle.query_queue.QueryQueue.latest_add"><code class="docutils literal notranslate"><span class="pre">QueryQueue.latest_add</span></code></a></li>
+<li><a class="reference internal" href="#alts.core.oracle.query_queue.QueryQueue.latest_pop"><code class="docutils literal notranslate"><span class="pre">QueryQueue.latest_pop</span></code></a></li>
+<li><a class="reference internal" href="#alts.core.oracle.query_queue.QueryQueue.pop"><code class="docutils literal notranslate"><span class="pre">QueryQueue.pop()</span></code></a></li>
+<li><a class="reference internal" href="#alts.core.oracle.query_queue.QueryQueue.post_init"><code class="docutils literal notranslate"><span class="pre">QueryQueue.post_init()</span></code></a></li>
+<li><a class="reference internal" href="#alts.core.oracle.query_queue.QueryQueue.queries"><code class="docutils literal notranslate"><span class="pre">QueryQueue.queries</span></code></a></li>
+<li><a class="reference internal" href="#alts.core.oracle.query_queue.QueryQueue.query_constrain"><code class="docutils literal notranslate"><span class="pre">QueryQueue.query_constrain()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="oracles.html"
+                          title="previous chapter">Oracles (Core)</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="../query.html"
+                          title="next chapter">Query (Core)</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/core/oracle/query_queue.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+<div id="sidebarbutton" title="Collapse sidebar">
+<span>«</span>
+</div>
+
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../query.html" title="Query (Core)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="oracles.html" title="Oracles (Core)"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">ALTS-Documentation 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../core.html" >Core Modules</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../oracle.html" >Oracle Modules (Core)</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Query Queue (Core)</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2024, Benjamin Gors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Evaluator (Implementation) &#8212; ALTS-Documentation 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=48851edf" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/functions.css?v=c671ca28" />
+    <link rel="stylesheet" href="../_static/css/functions.css" type="text/css" />
+    
+    <script src="../_static/documentation_options.js?v=1b390748"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <script src="../_static/sidebar.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Queried Data Pool (Implementation)" href="queried_data_pool.html" />
+    <link rel="prev" title="Data Sampler (Implementation)" href="data_sampler.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="queried_data_pool.html" title="Queried Data Pool (Implementation)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="data_sampler.html" title="Data Sampler (Implementation)"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">ALTS-Documentation 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../modules.html" accesskey="U">Module Implementations</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Evaluator (Implementation)</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-alts.modules.evaluator">
+<span id="evaluator-implementation"></span><h1>Evaluator (Implementation)<a class="headerlink" href="#module-alts.modules.evaluator" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.modules.evaluator.LogAllEvaluator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.modules.evaluator.</span></span><span class="sig-name descname"><span class="pre">LogAllEvaluator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.evaluator.LogAllEvaluator" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../core/evaluator.html#alts.core.evaluator.LogingEvaluator" title="alts.core.evaluator.LogingEvaluator"><code class="xref py py-class docutils literal notranslate"><span class="pre">LogingEvaluator</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.evaluator.LogAllEvaluator.file_name">
+<span class="sig-name descname"><span class="pre">file_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'all_data'</span></em><a class="headerlink" href="#alts.modules.evaluator.LogAllEvaluator.file_name" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.evaluator.LogAllEvaluator.folder">
+<span class="sig-name descname"><span class="pre">folder</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'log'</span></em><a class="headerlink" href="#alts.modules.evaluator.LogAllEvaluator.folder" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.evaluator.LogAllEvaluator.lpev">
+<span class="sig-name descname"><span class="pre">lpev</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#alts.modules.evaluator.LogProcessEvaluator" title="alts.modules.evaluator.LogProcessEvaluator"><span class="pre">LogProcessEvaluator</span></a></em><a class="headerlink" href="#alts.modules.evaluator.LogAllEvaluator.lpev" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.evaluator.LogAllEvaluator.lrev">
+<span class="sig-name descname"><span class="pre">lrev</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#alts.modules.evaluator.LogResultEvaluator" title="alts.modules.evaluator.LogResultEvaluator"><span class="pre">LogResultEvaluator</span></a></em><a class="headerlink" href="#alts.modules.evaluator.LogAllEvaluator.lrev" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.evaluator.LogAllEvaluator.lsev">
+<span class="sig-name descname"><span class="pre">lsev</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#alts.modules.evaluator.LogStreamEvaluator" title="alts.modules.evaluator.LogStreamEvaluator"><span class="pre">LogStreamEvaluator</span></a></em><a class="headerlink" href="#alts.modules.evaluator.LogAllEvaluator.lsev" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.evaluator.LogAllEvaluator.post_init">
+<span class="sig-name descname"><span class="pre">post_init</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.evaluator.LogAllEvaluator.post_init" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.evaluator.LogAllEvaluator.register">
+<span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">experiment</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../core/experiment.html#alts.core.experiment.Experiment" title="alts.core.experiment.Experiment"><span class="pre">Experiment</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.evaluator.LogAllEvaluator.register" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.modules.evaluator.LogOracleEvaluator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.modules.evaluator.</span></span><span class="sig-name descname"><span class="pre">LogOracleEvaluator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.evaluator.LogOracleEvaluator" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../core/evaluator.html#alts.core.evaluator.LogingEvaluator" title="alts.core.evaluator.LogingEvaluator"><code class="xref py py-class docutils literal notranslate"><span class="pre">LogingEvaluator</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.evaluator.LogOracleEvaluator.file_name">
+<span class="sig-name descname"><span class="pre">file_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'oracle_data'</span></em><a class="headerlink" href="#alts.modules.evaluator.LogOracleEvaluator.file_name" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.evaluator.LogOracleEvaluator.folder">
+<span class="sig-name descname"><span class="pre">folder</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'log'</span></em><a class="headerlink" href="#alts.modules.evaluator.LogOracleEvaluator.folder" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.evaluator.LogOracleEvaluator.log_data">
+<span class="sig-name descname"><span class="pre">log_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exp_nr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.evaluator.LogOracleEvaluator.log_data" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.evaluator.LogOracleEvaluator.register">
+<span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">experiment</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../core/experiment.html#alts.core.experiment.Experiment" title="alts.core.experiment.Experiment"><span class="pre">Experiment</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.evaluator.LogOracleEvaluator.register" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.evaluator.LogOracleEvaluator.save_query">
+<span class="sig-name descname"><span class="pre">save_query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">queries</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.evaluator.LogOracleEvaluator.save_query" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.modules.evaluator.LogProcessEvaluator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.modules.evaluator.</span></span><span class="sig-name descname"><span class="pre">LogProcessEvaluator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.evaluator.LogProcessEvaluator" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../core/evaluator.html#alts.core.evaluator.LogingEvaluator" title="alts.core.evaluator.LogingEvaluator"><code class="xref py py-class docutils literal notranslate"><span class="pre">LogingEvaluator</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.evaluator.LogProcessEvaluator.file_name">
+<span class="sig-name descname"><span class="pre">file_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'process'</span></em><a class="headerlink" href="#alts.modules.evaluator.LogProcessEvaluator.file_name" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.evaluator.LogProcessEvaluator.folder">
+<span class="sig-name descname"><span class="pre">folder</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'log'</span></em><a class="headerlink" href="#alts.modules.evaluator.LogProcessEvaluator.folder" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.evaluator.LogProcessEvaluator.log_data">
+<span class="sig-name descname"><span class="pre">log_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exp_nr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.evaluator.LogProcessEvaluator.log_data" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.evaluator.LogProcessEvaluator.register">
+<span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">experiment</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../core/experiment.html#alts.core.experiment.Experiment" title="alts.core.experiment.Experiment"><span class="pre">Experiment</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.evaluator.LogProcessEvaluator.register" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.evaluator.LogProcessEvaluator.save_process">
+<span class="sig-name descname"><span class="pre">save_process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.evaluator.LogProcessEvaluator.save_process" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.modules.evaluator.LogResultEvaluator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.modules.evaluator.</span></span><span class="sig-name descname"><span class="pre">LogResultEvaluator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.evaluator.LogResultEvaluator" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../core/evaluator.html#alts.core.evaluator.LogingEvaluator" title="alts.core.evaluator.LogingEvaluator"><code class="xref py py-class docutils literal notranslate"><span class="pre">LogingEvaluator</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.evaluator.LogResultEvaluator.file_name">
+<span class="sig-name descname"><span class="pre">file_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'result'</span></em><a class="headerlink" href="#alts.modules.evaluator.LogResultEvaluator.file_name" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.evaluator.LogResultEvaluator.folder">
+<span class="sig-name descname"><span class="pre">folder</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'log'</span></em><a class="headerlink" href="#alts.modules.evaluator.LogResultEvaluator.folder" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.evaluator.LogResultEvaluator.log_data">
+<span class="sig-name descname"><span class="pre">log_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exp_nr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.evaluator.LogResultEvaluator.log_data" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.evaluator.LogResultEvaluator.register">
+<span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">experiment</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../core/experiment.html#alts.core.experiment.Experiment" title="alts.core.experiment.Experiment"><span class="pre">Experiment</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.evaluator.LogResultEvaluator.register" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.evaluator.LogResultEvaluator.save_result">
+<span class="sig-name descname"><span class="pre">save_result</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.evaluator.LogResultEvaluator.save_result" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.modules.evaluator.LogStreamEvaluator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.modules.evaluator.</span></span><span class="sig-name descname"><span class="pre">LogStreamEvaluator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.evaluator.LogStreamEvaluator" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../core/evaluator.html#alts.core.evaluator.LogingEvaluator" title="alts.core.evaluator.LogingEvaluator"><code class="xref py py-class docutils literal notranslate"><span class="pre">LogingEvaluator</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.evaluator.LogStreamEvaluator.file_name">
+<span class="sig-name descname"><span class="pre">file_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'stream'</span></em><a class="headerlink" href="#alts.modules.evaluator.LogStreamEvaluator.file_name" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.evaluator.LogStreamEvaluator.folder">
+<span class="sig-name descname"><span class="pre">folder</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'log'</span></em><a class="headerlink" href="#alts.modules.evaluator.LogStreamEvaluator.folder" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.evaluator.LogStreamEvaluator.log_data">
+<span class="sig-name descname"><span class="pre">log_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exp_nr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.evaluator.LogStreamEvaluator.log_data" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.evaluator.LogStreamEvaluator.register">
+<span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">experiment</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../core/experiment.html#alts.core.experiment.Experiment" title="alts.core.experiment.Experiment"><span class="pre">Experiment</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.evaluator.LogStreamEvaluator.register" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.evaluator.LogStreamEvaluator.save_stream">
+<span class="sig-name descname"><span class="pre">save_stream</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.evaluator.LogStreamEvaluator.save_stream" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.modules.evaluator.LogTVPGTEvaluator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.modules.evaluator.</span></span><span class="sig-name descname"><span class="pre">LogTVPGTEvaluator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.evaluator.LogTVPGTEvaluator" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../core/evaluator.html#alts.core.evaluator.LogingEvaluator" title="alts.core.evaluator.LogingEvaluator"><code class="xref py py-class docutils literal notranslate"><span class="pre">LogingEvaluator</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.evaluator.LogTVPGTEvaluator.file_name">
+<span class="sig-name descname"><span class="pre">file_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'gt_data'</span></em><a class="headerlink" href="#alts.modules.evaluator.LogTVPGTEvaluator.file_name" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.evaluator.LogTVPGTEvaluator.folder">
+<span class="sig-name descname"><span class="pre">folder</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'log'</span></em><a class="headerlink" href="#alts.modules.evaluator.LogTVPGTEvaluator.folder" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.evaluator.LogTVPGTEvaluator.log_data">
+<span class="sig-name descname"><span class="pre">log_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exp_nr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.evaluator.LogTVPGTEvaluator.log_data" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.evaluator.LogTVPGTEvaluator.register">
+<span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">experiment</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../core/experiment.html#alts.core.experiment.Experiment" title="alts.core.experiment.Experiment"><span class="pre">Experiment</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.evaluator.LogTVPGTEvaluator.register" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.evaluator.LogTVPGTEvaluator.save_gt">
+<span class="sig-name descname"><span class="pre">save_gt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.evaluator.LogTVPGTEvaluator.save_gt" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.modules.evaluator.PlotAllDataPointsEvaluator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.modules.evaluator.</span></span><span class="sig-name descname"><span class="pre">PlotAllDataPointsEvaluator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.evaluator.PlotAllDataPointsEvaluator" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../core/evaluator.html#alts.core.evaluator.LogingEvaluator" title="alts.core.evaluator.LogingEvaluator"><code class="xref py py-class docutils literal notranslate"><span class="pre">LogingEvaluator</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.evaluator.PlotAllDataPointsEvaluator.data_pools">
+<span class="sig-name descname"><span class="pre">data_pools</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../core/data/data_pools.html#alts.core.data.data_pools.ResultDataPools" title="alts.core.data.data_pools.ResultDataPools"><span class="pre">ResultDataPools</span></a></em><a class="headerlink" href="#alts.modules.evaluator.PlotAllDataPointsEvaluator.data_pools" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.evaluator.PlotAllDataPointsEvaluator.fig_name">
+<span class="sig-name descname"><span class="pre">fig_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'AllData'</span></em><a class="headerlink" href="#alts.modules.evaluator.PlotAllDataPointsEvaluator.fig_name" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.evaluator.PlotAllDataPointsEvaluator.folder">
+<span class="sig-name descname"><span class="pre">folder</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'fig'</span></em><a class="headerlink" href="#alts.modules.evaluator.PlotAllDataPointsEvaluator.folder" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.evaluator.PlotAllDataPointsEvaluator.interactive">
+<span class="sig-name descname"><span class="pre">interactive</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#alts.modules.evaluator.PlotAllDataPointsEvaluator.interactive" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.evaluator.PlotAllDataPointsEvaluator.log_data">
+<span class="sig-name descname"><span class="pre">log_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exp_nr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.evaluator.PlotAllDataPointsEvaluator.log_data" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.evaluator.PlotAllDataPointsEvaluator.register">
+<span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">experiment</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../core/experiment.html#alts.core.experiment.Experiment" title="alts.core.experiment.Experiment"><span class="pre">Experiment</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.evaluator.PlotAllDataPointsEvaluator.register" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.modules.evaluator.PlotNewDataPointsEvaluator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.modules.evaluator.</span></span><span class="sig-name descname"><span class="pre">PlotNewDataPointsEvaluator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.evaluator.PlotNewDataPointsEvaluator" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../core/evaluator.html#alts.core.evaluator.LogingEvaluator" title="alts.core.evaluator.LogingEvaluator"><code class="xref py py-class docutils literal notranslate"><span class="pre">LogingEvaluator</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.evaluator.PlotNewDataPointsEvaluator.fig_name">
+<span class="sig-name descname"><span class="pre">fig_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Data'</span></em><a class="headerlink" href="#alts.modules.evaluator.PlotNewDataPointsEvaluator.fig_name" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.evaluator.PlotNewDataPointsEvaluator.folder">
+<span class="sig-name descname"><span class="pre">folder</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'fig'</span></em><a class="headerlink" href="#alts.modules.evaluator.PlotNewDataPointsEvaluator.folder" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.evaluator.PlotNewDataPointsEvaluator.interactive">
+<span class="sig-name descname"><span class="pre">interactive</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#alts.modules.evaluator.PlotNewDataPointsEvaluator.interactive" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.evaluator.PlotNewDataPointsEvaluator.plot_new_data_points">
+<span class="sig-name descname"><span class="pre">plot_new_data_points</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_points</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.evaluator.PlotNewDataPointsEvaluator.plot_new_data_points" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.evaluator.PlotNewDataPointsEvaluator.queries">
+<span class="sig-name descname"><span class="pre">queries</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">NDArray</span><span class="p"><span class="pre">[</span></span><span class="pre">Shape</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'query_nr,</span> <span class="pre">...</span> <span class="pre">query_dim'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Number</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#alts.modules.evaluator.PlotNewDataPointsEvaluator.queries" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.evaluator.PlotNewDataPointsEvaluator.register">
+<span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">experiment</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../core/experiment.html#alts.core.experiment.Experiment" title="alts.core.experiment.Experiment"><span class="pre">Experiment</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.evaluator.PlotNewDataPointsEvaluator.register" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.evaluator.PlotNewDataPointsEvaluator.results">
+<span class="sig-name descname"><span class="pre">results</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">NDArray</span><span class="p"><span class="pre">[</span></span><span class="pre">Shape</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'query_nr,</span> <span class="pre">...</span> <span class="pre">result_dim'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Number</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#alts.modules.evaluator.PlotNewDataPointsEvaluator.results" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.modules.evaluator.PlotQueryDistEvaluator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.modules.evaluator.</span></span><span class="sig-name descname"><span class="pre">PlotQueryDistEvaluator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.evaluator.PlotQueryDistEvaluator" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../core/evaluator.html#alts.core.evaluator.LogingEvaluator" title="alts.core.evaluator.LogingEvaluator"><code class="xref py py-class docutils literal notranslate"><span class="pre">LogingEvaluator</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.evaluator.PlotQueryDistEvaluator.fig_name">
+<span class="sig-name descname"><span class="pre">fig_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Query</span> <span class="pre">distribution'</span></em><a class="headerlink" href="#alts.modules.evaluator.PlotQueryDistEvaluator.fig_name" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.evaluator.PlotQueryDistEvaluator.folder">
+<span class="sig-name descname"><span class="pre">folder</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'fig'</span></em><a class="headerlink" href="#alts.modules.evaluator.PlotQueryDistEvaluator.folder" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.evaluator.PlotQueryDistEvaluator.interactive">
+<span class="sig-name descname"><span class="pre">interactive</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">False</span></em><a class="headerlink" href="#alts.modules.evaluator.PlotQueryDistEvaluator.interactive" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.evaluator.PlotQueryDistEvaluator.plot_query_dist">
+<span class="sig-name descname"><span class="pre">plot_query_dist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_candidate</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.evaluator.PlotQueryDistEvaluator.plot_query_dist" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.evaluator.PlotQueryDistEvaluator.queries">
+<span class="sig-name descname"><span class="pre">queries</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">NDArray</span><span class="p"><span class="pre">[</span></span><span class="pre">Shape</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'query_nr,</span> <span class="pre">...</span> <span class="pre">query_dim'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Number</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#alts.modules.evaluator.PlotQueryDistEvaluator.queries" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.evaluator.PlotQueryDistEvaluator.register">
+<span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">experiment</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../core/experiment.html#alts.core.experiment.Experiment" title="alts.core.experiment.Experiment"><span class="pre">Experiment</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.evaluator.PlotQueryDistEvaluator.register" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.modules.evaluator.PlotSampledQueriesEvaluator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.modules.evaluator.</span></span><span class="sig-name descname"><span class="pre">PlotSampledQueriesEvaluator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.evaluator.PlotSampledQueriesEvaluator" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../core/evaluator.html#alts.core.evaluator.LogingEvaluator" title="alts.core.evaluator.LogingEvaluator"><code class="xref py py-class docutils literal notranslate"><span class="pre">LogingEvaluator</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.evaluator.PlotSampledQueriesEvaluator.fig_name">
+<span class="sig-name descname"><span class="pre">fig_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'Sampled</span> <span class="pre">queries'</span></em><a class="headerlink" href="#alts.modules.evaluator.PlotSampledQueriesEvaluator.fig_name" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.evaluator.PlotSampledQueriesEvaluator.folder">
+<span class="sig-name descname"><span class="pre">folder</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'fig'</span></em><a class="headerlink" href="#alts.modules.evaluator.PlotSampledQueriesEvaluator.folder" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.evaluator.PlotSampledQueriesEvaluator.interactive">
+<span class="sig-name descname"><span class="pre">interactive</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#alts.modules.evaluator.PlotSampledQueriesEvaluator.interactive" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.evaluator.PlotSampledQueriesEvaluator.plot_queries">
+<span class="sig-name descname"><span class="pre">plot_queries</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">queries</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.evaluator.PlotSampledQueriesEvaluator.plot_queries" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.evaluator.PlotSampledQueriesEvaluator.register">
+<span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">experiment</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../core/experiment.html#alts.core.experiment.Experiment" title="alts.core.experiment.Experiment"><span class="pre">Experiment</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.evaluator.PlotSampledQueriesEvaluator.register" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.modules.evaluator.PrintExpTimeEvaluator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.modules.evaluator.</span></span><span class="sig-name descname"><span class="pre">PrintExpTimeEvaluator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.evaluator.PrintExpTimeEvaluator" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../core/evaluator.html#alts.core.evaluator.Evaluator" title="alts.core.evaluator.Evaluator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Evaluator</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.evaluator.PrintExpTimeEvaluator.end_time">
+<span class="sig-name descname"><span class="pre">end_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exp_nr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.evaluator.PrintExpTimeEvaluator.end_time" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.evaluator.PrintExpTimeEvaluator.register">
+<span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">experiment</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../core/experiment.html#alts.core.experiment.Experiment" title="alts.core.experiment.Experiment"><span class="pre">Experiment</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.evaluator.PrintExpTimeEvaluator.register" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.evaluator.PrintExpTimeEvaluator.start_time">
+<span class="sig-name descname"><span class="pre">start_time</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.evaluator.PrintExpTimeEvaluator.start_time" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.modules.evaluator.PrintNewDataPointsEvaluator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.modules.evaluator.</span></span><span class="sig-name descname"><span class="pre">PrintNewDataPointsEvaluator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.evaluator.PrintNewDataPointsEvaluator" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../core/evaluator.html#alts.core.evaluator.Evaluator" title="alts.core.evaluator.Evaluator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Evaluator</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.evaluator.PrintNewDataPointsEvaluator.print_new_data_points">
+<span class="sig-name descname"><span class="pre">print_new_data_points</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_points</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.evaluator.PrintNewDataPointsEvaluator.print_new_data_points" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.evaluator.PrintNewDataPointsEvaluator.register">
+<span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">experiment</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../core/experiment.html#alts.core.experiment.Experiment" title="alts.core.experiment.Experiment"><span class="pre">Experiment</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.evaluator.PrintNewDataPointsEvaluator.register" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.modules.evaluator.PrintQueryEvaluator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.modules.evaluator.</span></span><span class="sig-name descname"><span class="pre">PrintQueryEvaluator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.evaluator.PrintQueryEvaluator" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../core/evaluator.html#alts.core.evaluator.Evaluator" title="alts.core.evaluator.Evaluator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Evaluator</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.evaluator.PrintQueryEvaluator.print_query">
+<span class="sig-name descname"><span class="pre">print_query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.evaluator.PrintQueryEvaluator.print_query" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.evaluator.PrintQueryEvaluator.register">
+<span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">experiment</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../core/experiment.html#alts.core.experiment.Experiment" title="alts.core.experiment.Experiment"><span class="pre">Experiment</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.evaluator.PrintQueryEvaluator.register" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.modules.evaluator.PrintTimeSourceEvaluator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.modules.evaluator.</span></span><span class="sig-name descname"><span class="pre">PrintTimeSourceEvaluator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.evaluator.PrintTimeSourceEvaluator" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../core/evaluator.html#alts.core.evaluator.Evaluator" title="alts.core.evaluator.Evaluator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Evaluator</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.evaluator.PrintTimeSourceEvaluator.end_time">
+<span class="sig-name descname"><span class="pre">end_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.evaluator.PrintTimeSourceEvaluator.end_time" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.evaluator.PrintTimeSourceEvaluator.register">
+<span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">experiment</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../core/experiment.html#alts.core.experiment.Experiment" title="alts.core.experiment.Experiment"><span class="pre">Experiment</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.evaluator.PrintTimeSourceEvaluator.register" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Evaluator (Implementation)</a><ul>
+<li><a class="reference internal" href="#alts.modules.evaluator.LogAllEvaluator"><code class="docutils literal notranslate"><span class="pre">LogAllEvaluator</span></code></a><ul>
+<li><a class="reference internal" href="#alts.modules.evaluator.LogAllEvaluator.file_name"><code class="docutils literal notranslate"><span class="pre">LogAllEvaluator.file_name</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.LogAllEvaluator.folder"><code class="docutils literal notranslate"><span class="pre">LogAllEvaluator.folder</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.LogAllEvaluator.lpev"><code class="docutils literal notranslate"><span class="pre">LogAllEvaluator.lpev</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.LogAllEvaluator.lrev"><code class="docutils literal notranslate"><span class="pre">LogAllEvaluator.lrev</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.LogAllEvaluator.lsev"><code class="docutils literal notranslate"><span class="pre">LogAllEvaluator.lsev</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.LogAllEvaluator.post_init"><code class="docutils literal notranslate"><span class="pre">LogAllEvaluator.post_init()</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.LogAllEvaluator.register"><code class="docutils literal notranslate"><span class="pre">LogAllEvaluator.register()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#alts.modules.evaluator.LogOracleEvaluator"><code class="docutils literal notranslate"><span class="pre">LogOracleEvaluator</span></code></a><ul>
+<li><a class="reference internal" href="#alts.modules.evaluator.LogOracleEvaluator.file_name"><code class="docutils literal notranslate"><span class="pre">LogOracleEvaluator.file_name</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.LogOracleEvaluator.folder"><code class="docutils literal notranslate"><span class="pre">LogOracleEvaluator.folder</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.LogOracleEvaluator.log_data"><code class="docutils literal notranslate"><span class="pre">LogOracleEvaluator.log_data()</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.LogOracleEvaluator.register"><code class="docutils literal notranslate"><span class="pre">LogOracleEvaluator.register()</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.LogOracleEvaluator.save_query"><code class="docutils literal notranslate"><span class="pre">LogOracleEvaluator.save_query()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#alts.modules.evaluator.LogProcessEvaluator"><code class="docutils literal notranslate"><span class="pre">LogProcessEvaluator</span></code></a><ul>
+<li><a class="reference internal" href="#alts.modules.evaluator.LogProcessEvaluator.file_name"><code class="docutils literal notranslate"><span class="pre">LogProcessEvaluator.file_name</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.LogProcessEvaluator.folder"><code class="docutils literal notranslate"><span class="pre">LogProcessEvaluator.folder</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.LogProcessEvaluator.log_data"><code class="docutils literal notranslate"><span class="pre">LogProcessEvaluator.log_data()</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.LogProcessEvaluator.register"><code class="docutils literal notranslate"><span class="pre">LogProcessEvaluator.register()</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.LogProcessEvaluator.save_process"><code class="docutils literal notranslate"><span class="pre">LogProcessEvaluator.save_process()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#alts.modules.evaluator.LogResultEvaluator"><code class="docutils literal notranslate"><span class="pre">LogResultEvaluator</span></code></a><ul>
+<li><a class="reference internal" href="#alts.modules.evaluator.LogResultEvaluator.file_name"><code class="docutils literal notranslate"><span class="pre">LogResultEvaluator.file_name</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.LogResultEvaluator.folder"><code class="docutils literal notranslate"><span class="pre">LogResultEvaluator.folder</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.LogResultEvaluator.log_data"><code class="docutils literal notranslate"><span class="pre">LogResultEvaluator.log_data()</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.LogResultEvaluator.register"><code class="docutils literal notranslate"><span class="pre">LogResultEvaluator.register()</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.LogResultEvaluator.save_result"><code class="docutils literal notranslate"><span class="pre">LogResultEvaluator.save_result()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#alts.modules.evaluator.LogStreamEvaluator"><code class="docutils literal notranslate"><span class="pre">LogStreamEvaluator</span></code></a><ul>
+<li><a class="reference internal" href="#alts.modules.evaluator.LogStreamEvaluator.file_name"><code class="docutils literal notranslate"><span class="pre">LogStreamEvaluator.file_name</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.LogStreamEvaluator.folder"><code class="docutils literal notranslate"><span class="pre">LogStreamEvaluator.folder</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.LogStreamEvaluator.log_data"><code class="docutils literal notranslate"><span class="pre">LogStreamEvaluator.log_data()</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.LogStreamEvaluator.register"><code class="docutils literal notranslate"><span class="pre">LogStreamEvaluator.register()</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.LogStreamEvaluator.save_stream"><code class="docutils literal notranslate"><span class="pre">LogStreamEvaluator.save_stream()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#alts.modules.evaluator.LogTVPGTEvaluator"><code class="docutils literal notranslate"><span class="pre">LogTVPGTEvaluator</span></code></a><ul>
+<li><a class="reference internal" href="#alts.modules.evaluator.LogTVPGTEvaluator.file_name"><code class="docutils literal notranslate"><span class="pre">LogTVPGTEvaluator.file_name</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.LogTVPGTEvaluator.folder"><code class="docutils literal notranslate"><span class="pre">LogTVPGTEvaluator.folder</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.LogTVPGTEvaluator.log_data"><code class="docutils literal notranslate"><span class="pre">LogTVPGTEvaluator.log_data()</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.LogTVPGTEvaluator.register"><code class="docutils literal notranslate"><span class="pre">LogTVPGTEvaluator.register()</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.LogTVPGTEvaluator.save_gt"><code class="docutils literal notranslate"><span class="pre">LogTVPGTEvaluator.save_gt()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#alts.modules.evaluator.PlotAllDataPointsEvaluator"><code class="docutils literal notranslate"><span class="pre">PlotAllDataPointsEvaluator</span></code></a><ul>
+<li><a class="reference internal" href="#alts.modules.evaluator.PlotAllDataPointsEvaluator.data_pools"><code class="docutils literal notranslate"><span class="pre">PlotAllDataPointsEvaluator.data_pools</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.PlotAllDataPointsEvaluator.fig_name"><code class="docutils literal notranslate"><span class="pre">PlotAllDataPointsEvaluator.fig_name</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.PlotAllDataPointsEvaluator.folder"><code class="docutils literal notranslate"><span class="pre">PlotAllDataPointsEvaluator.folder</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.PlotAllDataPointsEvaluator.interactive"><code class="docutils literal notranslate"><span class="pre">PlotAllDataPointsEvaluator.interactive</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.PlotAllDataPointsEvaluator.log_data"><code class="docutils literal notranslate"><span class="pre">PlotAllDataPointsEvaluator.log_data()</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.PlotAllDataPointsEvaluator.register"><code class="docutils literal notranslate"><span class="pre">PlotAllDataPointsEvaluator.register()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#alts.modules.evaluator.PlotNewDataPointsEvaluator"><code class="docutils literal notranslate"><span class="pre">PlotNewDataPointsEvaluator</span></code></a><ul>
+<li><a class="reference internal" href="#alts.modules.evaluator.PlotNewDataPointsEvaluator.fig_name"><code class="docutils literal notranslate"><span class="pre">PlotNewDataPointsEvaluator.fig_name</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.PlotNewDataPointsEvaluator.folder"><code class="docutils literal notranslate"><span class="pre">PlotNewDataPointsEvaluator.folder</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.PlotNewDataPointsEvaluator.interactive"><code class="docutils literal notranslate"><span class="pre">PlotNewDataPointsEvaluator.interactive</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.PlotNewDataPointsEvaluator.plot_new_data_points"><code class="docutils literal notranslate"><span class="pre">PlotNewDataPointsEvaluator.plot_new_data_points()</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.PlotNewDataPointsEvaluator.queries"><code class="docutils literal notranslate"><span class="pre">PlotNewDataPointsEvaluator.queries</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.PlotNewDataPointsEvaluator.register"><code class="docutils literal notranslate"><span class="pre">PlotNewDataPointsEvaluator.register()</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.PlotNewDataPointsEvaluator.results"><code class="docutils literal notranslate"><span class="pre">PlotNewDataPointsEvaluator.results</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#alts.modules.evaluator.PlotQueryDistEvaluator"><code class="docutils literal notranslate"><span class="pre">PlotQueryDistEvaluator</span></code></a><ul>
+<li><a class="reference internal" href="#alts.modules.evaluator.PlotQueryDistEvaluator.fig_name"><code class="docutils literal notranslate"><span class="pre">PlotQueryDistEvaluator.fig_name</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.PlotQueryDistEvaluator.folder"><code class="docutils literal notranslate"><span class="pre">PlotQueryDistEvaluator.folder</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.PlotQueryDistEvaluator.interactive"><code class="docutils literal notranslate"><span class="pre">PlotQueryDistEvaluator.interactive</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.PlotQueryDistEvaluator.plot_query_dist"><code class="docutils literal notranslate"><span class="pre">PlotQueryDistEvaluator.plot_query_dist()</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.PlotQueryDistEvaluator.queries"><code class="docutils literal notranslate"><span class="pre">PlotQueryDistEvaluator.queries</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.PlotQueryDistEvaluator.register"><code class="docutils literal notranslate"><span class="pre">PlotQueryDistEvaluator.register()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#alts.modules.evaluator.PlotSampledQueriesEvaluator"><code class="docutils literal notranslate"><span class="pre">PlotSampledQueriesEvaluator</span></code></a><ul>
+<li><a class="reference internal" href="#alts.modules.evaluator.PlotSampledQueriesEvaluator.fig_name"><code class="docutils literal notranslate"><span class="pre">PlotSampledQueriesEvaluator.fig_name</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.PlotSampledQueriesEvaluator.folder"><code class="docutils literal notranslate"><span class="pre">PlotSampledQueriesEvaluator.folder</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.PlotSampledQueriesEvaluator.interactive"><code class="docutils literal notranslate"><span class="pre">PlotSampledQueriesEvaluator.interactive</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.PlotSampledQueriesEvaluator.plot_queries"><code class="docutils literal notranslate"><span class="pre">PlotSampledQueriesEvaluator.plot_queries()</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.PlotSampledQueriesEvaluator.register"><code class="docutils literal notranslate"><span class="pre">PlotSampledQueriesEvaluator.register()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#alts.modules.evaluator.PrintExpTimeEvaluator"><code class="docutils literal notranslate"><span class="pre">PrintExpTimeEvaluator</span></code></a><ul>
+<li><a class="reference internal" href="#alts.modules.evaluator.PrintExpTimeEvaluator.end_time"><code class="docutils literal notranslate"><span class="pre">PrintExpTimeEvaluator.end_time()</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.PrintExpTimeEvaluator.register"><code class="docutils literal notranslate"><span class="pre">PrintExpTimeEvaluator.register()</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.PrintExpTimeEvaluator.start_time"><code class="docutils literal notranslate"><span class="pre">PrintExpTimeEvaluator.start_time()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#alts.modules.evaluator.PrintNewDataPointsEvaluator"><code class="docutils literal notranslate"><span class="pre">PrintNewDataPointsEvaluator</span></code></a><ul>
+<li><a class="reference internal" href="#alts.modules.evaluator.PrintNewDataPointsEvaluator.print_new_data_points"><code class="docutils literal notranslate"><span class="pre">PrintNewDataPointsEvaluator.print_new_data_points()</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.PrintNewDataPointsEvaluator.register"><code class="docutils literal notranslate"><span class="pre">PrintNewDataPointsEvaluator.register()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#alts.modules.evaluator.PrintQueryEvaluator"><code class="docutils literal notranslate"><span class="pre">PrintQueryEvaluator</span></code></a><ul>
+<li><a class="reference internal" href="#alts.modules.evaluator.PrintQueryEvaluator.print_query"><code class="docutils literal notranslate"><span class="pre">PrintQueryEvaluator.print_query()</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.PrintQueryEvaluator.register"><code class="docutils literal notranslate"><span class="pre">PrintQueryEvaluator.register()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#alts.modules.evaluator.PrintTimeSourceEvaluator"><code class="docutils literal notranslate"><span class="pre">PrintTimeSourceEvaluator</span></code></a><ul>
+<li><a class="reference internal" href="#alts.modules.evaluator.PrintTimeSourceEvaluator.end_time"><code class="docutils literal notranslate"><span class="pre">PrintTimeSourceEvaluator.end_time()</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.evaluator.PrintTimeSourceEvaluator.register"><code class="docutils literal notranslate"><span class="pre">PrintTimeSourceEvaluator.register()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="data_sampler.html"
+                          title="previous chapter">Data Sampler (Implementation)</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="queried_data_pool.html"
+                          title="next chapter">Queried Data Pool (Implementation)</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/modules/evaluator.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+<div id="sidebarbutton" title="Collapse sidebar">
+<span>«</span>
+</div>
+
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="queried_data_pool.html" title="Queried Data Pool (Implementation)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="data_sampler.html" title="Data Sampler (Implementation)"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">ALTS-Documentation 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../modules.html" >Module Implementations</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Evaluator (Implementation)</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2024, Benjamin Gors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
+    </div>
+  </body>
+</html>

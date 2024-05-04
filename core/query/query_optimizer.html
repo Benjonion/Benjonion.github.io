@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Query Optimizer (Core) &#8212; ALTS-Documentation 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/classic.css?v=48851edf" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/functions.css?v=c671ca28" />
+    <link rel="stylesheet" href="../../_static/css/functions.css" type="text/css" />
+    
+    <script src="../../_static/documentation_options.js?v=1b390748"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <script src="../../_static/sidebar.js"></script>
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Query Sampler (Core)" href="query_sampler.html" />
+    <link rel="prev" title="Query Decider (Core)" href="query_decider.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="query_sampler.html" title="Query Sampler (Core)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="query_decider.html" title="Query Decider (Core)"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">ALTS-Documentation 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../core.html" >Core Modules</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../query.html" accesskey="U">Query (Core)</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Query Optimizer (Core)</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-alts.core.query.query_optimizer">
+<span id="query-optimizer-core"></span><h1>Query Optimizer (Core)<a class="headerlink" href="#module-alts.core.query.query_optimizer" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.core.query.query_optimizer.QueryOptimizer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.core.query.query_optimizer.</span></span><span class="sig-name descname"><span class="pre">QueryOptimizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.core.query.query_optimizer.QueryOptimizer" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../experiment_module.html#alts.core.experiment_module.ExperimentModule" title="alts.core.experiment_module.ExperimentModule"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExperimentModule</span></code></a>, <a class="reference internal" href="../data/constrains.html#alts.core.data.constrains.QueryConstrained" title="alts.core.data.constrains.QueryConstrained"><code class="xref py py-class docutils literal notranslate"><span class="pre">QueryConstrained</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.core.query.query_optimizer.QueryOptimizer.post_init">
+<span class="sig-name descname"><span class="pre">post_init</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#alts.core.query.query_optimizer.QueryOptimizer.post_init" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.core.query.query_optimizer.QueryOptimizer.select">
+<span class="sig-name descname"><span class="pre">select</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_queries</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">NDArray</span><span class="p"><span class="pre">[</span></span><span class="pre">Shape</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'query_nr,</span> <span class="pre">...</span> <span class="pre">query_dims'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Number</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">NDArray</span><span class="p"><span class="pre">[</span></span><span class="pre">Shape</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'query_nr,</span> <span class="pre">[query_score]'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Number</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#alts.core.query.query_optimizer.QueryOptimizer.select" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.core.query.query_optimizer.QueryOptimizer.selection_criteria">
+<span class="sig-name descname"><span class="pre">selection_criteria</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="selection_criteria.html#alts.core.query.selection_criteria.SelectionCriteria" title="alts.core.query.selection_criteria.SelectionCriteria"><span class="pre">SelectionCriteria</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">NOTSET</span></em><a class="headerlink" href="#alts.core.query.query_optimizer.QueryOptimizer.selection_criteria" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Query Optimizer (Core)</a><ul>
+<li><a class="reference internal" href="#alts.core.query.query_optimizer.QueryOptimizer"><code class="docutils literal notranslate"><span class="pre">QueryOptimizer</span></code></a><ul>
+<li><a class="reference internal" href="#alts.core.query.query_optimizer.QueryOptimizer.post_init"><code class="docutils literal notranslate"><span class="pre">QueryOptimizer.post_init()</span></code></a></li>
+<li><a class="reference internal" href="#alts.core.query.query_optimizer.QueryOptimizer.select"><code class="docutils literal notranslate"><span class="pre">QueryOptimizer.select()</span></code></a></li>
+<li><a class="reference internal" href="#alts.core.query.query_optimizer.QueryOptimizer.selection_criteria"><code class="docutils literal notranslate"><span class="pre">QueryOptimizer.selection_criteria</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="query_decider.html"
+                          title="previous chapter">Query Decider (Core)</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="query_sampler.html"
+                          title="next chapter">Query Sampler (Core)</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/core/query/query_optimizer.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+<div id="sidebarbutton" title="Collapse sidebar">
+<span>«</span>
+</div>
+
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="query_sampler.html" title="Query Sampler (Core)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="query_decider.html" title="Query Decider (Core)"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">ALTS-Documentation 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../core.html" >Core Modules</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../query.html" >Query (Core)</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Query Optimizer (Core)</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2024, Benjamin Gors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
+    </div>
+  </body>
+</html>

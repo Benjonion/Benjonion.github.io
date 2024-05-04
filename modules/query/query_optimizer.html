@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Query Optimizer (Implementation) &#8212; ALTS-Documentation 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/classic.css?v=48851edf" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/functions.css?v=c671ca28" />
+    <link rel="stylesheet" href="../../_static/css/functions.css" type="text/css" />
+    
+    <script src="../../_static/documentation_options.js?v=1b390748"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <script src="../../_static/sidebar.js"></script>
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Query Sampler (Implementation)" href="query_sampler.html" />
+    <link rel="prev" title="Query Decider (Implementation)" href="query_decider.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="query_sampler.html" title="Query Sampler (Implementation)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="query_decider.html" title="Query Decider (Implementation)"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">ALTS-Documentation 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../modules.html" >Module Implementations</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../query.html" accesskey="U">Query (Implementation)</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Query Optimizer (Implementation)</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-alts.modules.query.query_optimizer">
+<span id="query-optimizer-implementation"></span><h1>Query Optimizer (Implementation)<a class="headerlink" href="#module-alts.modules.query.query_optimizer" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.modules.query.query_optimizer.GAQueryOptimizer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.modules.query.query_optimizer.</span></span><span class="sig-name descname"><span class="pre">GAQueryOptimizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.query.query_optimizer.GAQueryOptimizer" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../core/query/query_optimizer.html#alts.core.query.query_optimizer.QueryOptimizer" title="alts.core.query.query_optimizer.QueryOptimizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">QueryOptimizer</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.query.query_optimizer.GAQueryOptimizer.select">
+<span class="sig-name descname"><span class="pre">select</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.query.query_optimizer.GAQueryOptimizer.select" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.modules.query.query_optimizer.MCQueryOptimizer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.modules.query.query_optimizer.</span></span><span class="sig-name descname"><span class="pre">MCQueryOptimizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.query.query_optimizer.MCQueryOptimizer" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../core/query/query_optimizer.html#alts.core.query.query_optimizer.QueryOptimizer" title="alts.core.query.query_optimizer.QueryOptimizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">QueryOptimizer</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.query.query_optimizer.MCQueryOptimizer.num_tries">
+<span class="sig-name descname"><span class="pre">num_tries</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">100</span></em><a class="headerlink" href="#alts.modules.query.query_optimizer.MCQueryOptimizer.num_tries" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.query.query_optimizer.MCQueryOptimizer.post_init">
+<span class="sig-name descname"><span class="pre">post_init</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.query.query_optimizer.MCQueryOptimizer.post_init" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.query.query_optimizer.MCQueryOptimizer.query_sampler">
+<span class="sig-name descname"><span class="pre">query_sampler</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../../core/query/query_sampler.html#alts.core.query.query_sampler.QuerySampler" title="alts.core.query.query_sampler.QuerySampler"><span class="pre">QuerySampler</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">NOTSET</span></em><a class="headerlink" href="#alts.modules.query.query_optimizer.MCQueryOptimizer.query_sampler" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.modules.query.query_optimizer.MaxMCQueryOptimizer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.modules.query.query_optimizer.</span></span><span class="sig-name descname"><span class="pre">MaxMCQueryOptimizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.query.query_optimizer.MaxMCQueryOptimizer" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#alts.modules.query.query_optimizer.MCQueryOptimizer" title="alts.modules.query.query_optimizer.MCQueryOptimizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">MCQueryOptimizer</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.query.query_optimizer.MaxMCQueryOptimizer.select">
+<span class="sig-name descname"><span class="pre">select</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.query.query_optimizer.MaxMCQueryOptimizer.select" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.modules.query.query_optimizer.NoQueryOptimizer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.modules.query.query_optimizer.</span></span><span class="sig-name descname"><span class="pre">NoQueryOptimizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.query.query_optimizer.NoQueryOptimizer" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../../core/query/query_optimizer.html#alts.core.query.query_optimizer.QueryOptimizer" title="alts.core.query.query_optimizer.QueryOptimizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">QueryOptimizer</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.query.query_optimizer.NoQueryOptimizer.post_init">
+<span class="sig-name descname"><span class="pre">post_init</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.query.query_optimizer.NoQueryOptimizer.post_init" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.modules.query.query_optimizer.NoQueryOptimizer.query_sampler">
+<span class="sig-name descname"><span class="pre">query_sampler</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="../../core/query/query_sampler.html#alts.core.query.query_sampler.QuerySampler" title="alts.core.query.query_sampler.QuerySampler"><span class="pre">QuerySampler</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">NOTSET</span></em><a class="headerlink" href="#alts.modules.query.query_optimizer.NoQueryOptimizer.query_sampler" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.query.query_optimizer.NoQueryOptimizer.select">
+<span class="sig-name descname"><span class="pre">select</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.query.query_optimizer.NoQueryOptimizer.select" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.modules.query.query_optimizer.ProbWeightedMCQueryOptimizer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.modules.query.query_optimizer.</span></span><span class="sig-name descname"><span class="pre">ProbWeightedMCQueryOptimizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.query.query_optimizer.ProbWeightedMCQueryOptimizer" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#alts.modules.query.query_optimizer.MCQueryOptimizer" title="alts.modules.query.query_optimizer.MCQueryOptimizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">MCQueryOptimizer</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.modules.query.query_optimizer.ProbWeightedMCQueryOptimizer.select">
+<span class="sig-name descname"><span class="pre">select</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#alts.modules.query.query_optimizer.ProbWeightedMCQueryOptimizer.select" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Query Optimizer (Implementation)</a><ul>
+<li><a class="reference internal" href="#alts.modules.query.query_optimizer.GAQueryOptimizer"><code class="docutils literal notranslate"><span class="pre">GAQueryOptimizer</span></code></a><ul>
+<li><a class="reference internal" href="#alts.modules.query.query_optimizer.GAQueryOptimizer.select"><code class="docutils literal notranslate"><span class="pre">GAQueryOptimizer.select()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#alts.modules.query.query_optimizer.MCQueryOptimizer"><code class="docutils literal notranslate"><span class="pre">MCQueryOptimizer</span></code></a><ul>
+<li><a class="reference internal" href="#alts.modules.query.query_optimizer.MCQueryOptimizer.num_tries"><code class="docutils literal notranslate"><span class="pre">MCQueryOptimizer.num_tries</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.query.query_optimizer.MCQueryOptimizer.post_init"><code class="docutils literal notranslate"><span class="pre">MCQueryOptimizer.post_init()</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.query.query_optimizer.MCQueryOptimizer.query_sampler"><code class="docutils literal notranslate"><span class="pre">MCQueryOptimizer.query_sampler</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#alts.modules.query.query_optimizer.MaxMCQueryOptimizer"><code class="docutils literal notranslate"><span class="pre">MaxMCQueryOptimizer</span></code></a><ul>
+<li><a class="reference internal" href="#alts.modules.query.query_optimizer.MaxMCQueryOptimizer.select"><code class="docutils literal notranslate"><span class="pre">MaxMCQueryOptimizer.select()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#alts.modules.query.query_optimizer.NoQueryOptimizer"><code class="docutils literal notranslate"><span class="pre">NoQueryOptimizer</span></code></a><ul>
+<li><a class="reference internal" href="#alts.modules.query.query_optimizer.NoQueryOptimizer.post_init"><code class="docutils literal notranslate"><span class="pre">NoQueryOptimizer.post_init()</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.query.query_optimizer.NoQueryOptimizer.query_sampler"><code class="docutils literal notranslate"><span class="pre">NoQueryOptimizer.query_sampler</span></code></a></li>
+<li><a class="reference internal" href="#alts.modules.query.query_optimizer.NoQueryOptimizer.select"><code class="docutils literal notranslate"><span class="pre">NoQueryOptimizer.select()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#alts.modules.query.query_optimizer.ProbWeightedMCQueryOptimizer"><code class="docutils literal notranslate"><span class="pre">ProbWeightedMCQueryOptimizer</span></code></a><ul>
+<li><a class="reference internal" href="#alts.modules.query.query_optimizer.ProbWeightedMCQueryOptimizer.select"><code class="docutils literal notranslate"><span class="pre">ProbWeightedMCQueryOptimizer.select()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="query_decider.html"
+                          title="previous chapter">Query Decider (Implementation)</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="query_sampler.html"
+                          title="next chapter">Query Sampler (Implementation)</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/modules/query/query_optimizer.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+<div id="sidebarbutton" title="Collapse sidebar">
+<span>«</span>
+</div>
+
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="query_sampler.html" title="Query Sampler (Implementation)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="query_decider.html" title="Query Decider (Implementation)"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">ALTS-Documentation 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../modules.html" >Module Implementations</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../query.html" >Query (Implementation)</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Query Optimizer (Implementation)</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2024, Benjamin Gors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
+    </div>
+  </body>
+</html>

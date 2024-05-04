@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Query Selector (Core) &#8212; ALTS-Documentation 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/classic.css?v=48851edf" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/functions.css?v=c671ca28" />
+    <link rel="stylesheet" href="../../_static/css/functions.css" type="text/css" />
+    
+    <script src="../../_static/documentation_options.js?v=1b390748"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <script src="../../_static/sidebar.js"></script>
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Queryable (Core)" href="queryable.html" />
+    <link rel="prev" title="Query Sampler (Core)" href="query_sampler.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="queryable.html" title="Queryable (Core)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="query_sampler.html" title="Query Sampler (Core)"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">ALTS-Documentation 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../core.html" >Core Modules</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../query.html" accesskey="U">Query (Core)</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Query Selector (Core)</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-alts.core.query.query_selector">
+<span id="query-selector-core"></span><h1>Query Selector (Core)<a class="headerlink" href="#module-alts.core.query.query_selector" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.core.query.query_selector.ProcessQuerySelector">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.core.query.query_selector.</span></span><span class="sig-name descname"><span class="pre">ProcessQuerySelector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.core.query.query_selector.ProcessQuerySelector" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#alts.core.query.query_selector.QuerySelector" title="alts.core.query.query_selector.QuerySelector"><code class="xref py py-class docutils literal notranslate"><span class="pre">QuerySelector</span></code></a>, <a class="reference internal" href="../subscriber.html#alts.core.subscriber.ProcessDataSubscriber" title="alts.core.subscriber.ProcessDataSubscriber"><code class="xref py py-class docutils literal notranslate"><span class="pre">ProcessDataSubscriber</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.core.query.query_selector.ProcessQuerySelector.process_update">
+<span class="sig-name descname"><span class="pre">process_update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subscription</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../subscribable.html#alts.core.subscribable.Subscribable" title="alts.core.subscribable.Subscribable"><span class="pre">Subscribable</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.core.query.query_selector.ProcessQuerySelector.process_update" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.core.query.query_selector.QuerySelector">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.core.query.query_selector.</span></span><span class="sig-name descname"><span class="pre">QuerySelector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.core.query.query_selector.QuerySelector" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../experiment_module.html#alts.core.experiment_module.ExperimentModule" title="alts.core.experiment_module.ExperimentModule"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExperimentModule</span></code></a>, <a class="reference internal" href="../data/constrains.html#alts.core.data.constrains.QueryConstrained" title="alts.core.data.constrains.QueryConstrained"><code class="xref py py-class docutils literal notranslate"><span class="pre">QueryConstrained</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.core.query.query_selector.QuerySelector.decide">
+<span class="sig-name descname"><span class="pre">decide</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#alts.core.query.query_selector.QuerySelector.decide" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.core.query.query_selector.QuerySelector.post_init">
+<span class="sig-name descname"><span class="pre">post_init</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#alts.core.query.query_selector.QuerySelector.post_init" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.core.query.query_selector.QuerySelector.query_decider">
+<span class="sig-name descname"><span class="pre">query_decider</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="query_decider.html#alts.core.query.query_decider.QueryDecider" title="alts.core.query.query_decider.QueryDecider"><span class="pre">QueryDecider</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">NOTSET</span></em><a class="headerlink" href="#alts.core.query.query_selector.QuerySelector.query_decider" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.core.query.query_selector.QuerySelector.query_optimizer">
+<span class="sig-name descname"><span class="pre">query_optimizer</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="query_optimizer.html#alts.core.query.query_optimizer.QueryOptimizer" title="alts.core.query.query_optimizer.QueryOptimizer"><span class="pre">QueryOptimizer</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">NOTSET</span></em><a class="headerlink" href="#alts.core.query.query_selector.QuerySelector.query_optimizer" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.core.query.query_selector.ResultQuerySelector">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.core.query.query_selector.</span></span><span class="sig-name descname"><span class="pre">ResultQuerySelector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.core.query.query_selector.ResultQuerySelector" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#alts.core.query.query_selector.QuerySelector" title="alts.core.query.query_selector.QuerySelector"><code class="xref py py-class docutils literal notranslate"><span class="pre">QuerySelector</span></code></a>, <a class="reference internal" href="../subscriber.html#alts.core.subscriber.ResultDataSubscriber" title="alts.core.subscriber.ResultDataSubscriber"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResultDataSubscriber</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.core.query.query_selector.ResultQuerySelector.result_update">
+<span class="sig-name descname"><span class="pre">result_update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subscription</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../subscribable.html#alts.core.subscribable.Subscribable" title="alts.core.subscribable.Subscribable"><span class="pre">Subscribable</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.core.query.query_selector.ResultQuerySelector.result_update" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.core.query.query_selector.StreamQuerySelector">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.core.query.query_selector.</span></span><span class="sig-name descname"><span class="pre">StreamQuerySelector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.core.query.query_selector.StreamQuerySelector" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#alts.core.query.query_selector.QuerySelector" title="alts.core.query.query_selector.QuerySelector"><code class="xref py py-class docutils literal notranslate"><span class="pre">QuerySelector</span></code></a>, <a class="reference internal" href="../subscriber.html#alts.core.subscriber.StreamDataSubscriber" title="alts.core.subscriber.StreamDataSubscriber"><code class="xref py py-class docutils literal notranslate"><span class="pre">StreamDataSubscriber</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.core.query.query_selector.StreamQuerySelector.stream_update">
+<span class="sig-name descname"><span class="pre">stream_update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subscription</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="../subscribable.html#alts.core.subscribable.Subscribable" title="alts.core.subscribable.Subscribable"><span class="pre">Subscribable</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.core.query.query_selector.StreamQuerySelector.stream_update" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Query Selector (Core)</a><ul>
+<li><a class="reference internal" href="#alts.core.query.query_selector.ProcessQuerySelector"><code class="docutils literal notranslate"><span class="pre">ProcessQuerySelector</span></code></a><ul>
+<li><a class="reference internal" href="#alts.core.query.query_selector.ProcessQuerySelector.process_update"><code class="docutils literal notranslate"><span class="pre">ProcessQuerySelector.process_update()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#alts.core.query.query_selector.QuerySelector"><code class="docutils literal notranslate"><span class="pre">QuerySelector</span></code></a><ul>
+<li><a class="reference internal" href="#alts.core.query.query_selector.QuerySelector.decide"><code class="docutils literal notranslate"><span class="pre">QuerySelector.decide()</span></code></a></li>
+<li><a class="reference internal" href="#alts.core.query.query_selector.QuerySelector.post_init"><code class="docutils literal notranslate"><span class="pre">QuerySelector.post_init()</span></code></a></li>
+<li><a class="reference internal" href="#alts.core.query.query_selector.QuerySelector.query_decider"><code class="docutils literal notranslate"><span class="pre">QuerySelector.query_decider</span></code></a></li>
+<li><a class="reference internal" href="#alts.core.query.query_selector.QuerySelector.query_optimizer"><code class="docutils literal notranslate"><span class="pre">QuerySelector.query_optimizer</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#alts.core.query.query_selector.ResultQuerySelector"><code class="docutils literal notranslate"><span class="pre">ResultQuerySelector</span></code></a><ul>
+<li><a class="reference internal" href="#alts.core.query.query_selector.ResultQuerySelector.result_update"><code class="docutils literal notranslate"><span class="pre">ResultQuerySelector.result_update()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#alts.core.query.query_selector.StreamQuerySelector"><code class="docutils literal notranslate"><span class="pre">StreamQuerySelector</span></code></a><ul>
+<li><a class="reference internal" href="#alts.core.query.query_selector.StreamQuerySelector.stream_update"><code class="docutils literal notranslate"><span class="pre">StreamQuerySelector.stream_update()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="query_sampler.html"
+                          title="previous chapter">Query Sampler (Core)</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="queryable.html"
+                          title="next chapter">Queryable (Core)</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/core/query/query_selector.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+<div id="sidebarbutton" title="Collapse sidebar">
+<span>«</span>
+</div>
+
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="queryable.html" title="Queryable (Core)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="query_sampler.html" title="Query Sampler (Core)"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">ALTS-Documentation 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../../core.html" >Core Modules</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="../query.html" >Query (Core)</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Query Selector (Core)</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2024, Benjamin Gors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
+    </div>
+  </body>
+</html>

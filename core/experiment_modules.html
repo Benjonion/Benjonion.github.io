@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Experiment Modules (Core) &#8212; ALTS-Documentation 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=48851edf" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/functions.css?v=c671ca28" />
+    <link rel="stylesheet" href="../_static/css/functions.css" type="text/css" />
+    
+    <script src="../_static/documentation_options.js?v=1b390748"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <script src="../_static/sidebar.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Experiment Runner (Core)" href="experiment_runner.html" />
+    <link rel="prev" title="Experiment Module (Core)" href="experiment_module.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="experiment_runner.html" title="Experiment Runner (Core)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="experiment_module.html" title="Experiment Module (Core)"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">ALTS-Documentation 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../core.html" accesskey="U">Core Modules</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Experiment Modules (Core)</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-alts.core.experiment_modules">
+<span id="experiment-modules-core"></span><h1>Experiment Modules (Core)<a class="headerlink" href="#module-alts.core.experiment_modules" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.core.experiment_modules.EstimatorExperiment">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.core.experiment_modules.</span></span><span class="sig-name descname"><span class="pre">EstimatorExperiment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.core.experiment_modules.EstimatorExperiment" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#alts.core.experiment_modules.ExperimentModules" title="alts.core.experiment_modules.ExperimentModules"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExperimentModules</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.core.experiment_modules.EstimatorExperiment.estimator">
+<span class="sig-name descname"><span class="pre">estimator</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="estimator.html#alts.core.estimator.Estimator" title="alts.core.estimator.Estimator"><span class="pre">Estimator</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">NOTSET</span></em><a class="headerlink" href="#alts.core.experiment_modules.EstimatorExperiment.estimator" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.core.experiment_modules.EstimatorExperiment.post_init">
+<span class="sig-name descname"><span class="pre">post_init</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#alts.core.experiment_modules.EstimatorExperiment.post_init" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.core.experiment_modules.ExperimentModules">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.core.experiment_modules.</span></span><span class="sig-name descname"><span class="pre">ExperimentModules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.core.experiment_modules.ExperimentModules" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="subscribable.html#alts.core.subscribable.Publisher" title="alts.core.subscribable.Publisher"><code class="xref py py-class docutils literal notranslate"><span class="pre">Publisher</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.core.experiment_modules.ExperimentModules.data_pools">
+<span class="sig-name descname"><span class="pre">data_pools</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="data/data_pools.html#alts.core.data.data_pools.DataPools" title="alts.core.data.data_pools.DataPools"><span class="pre">DataPools</span></a></em><a class="headerlink" href="#alts.core.experiment_modules.ExperimentModules.data_pools" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.core.experiment_modules.ExperimentModules.initialize">
+<span class="sig-name descname"><span class="pre">initialize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#alts.core.experiment_modules.ExperimentModules.initialize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.core.experiment_modules.ExperimentModules.oracles">
+<span class="sig-name descname"><span class="pre">oracles</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="oracle/oracles.html#alts.core.oracle.oracles.Oracles" title="alts.core.oracle.oracles.Oracles"><span class="pre">Oracles</span></a></em><a class="headerlink" href="#alts.core.experiment_modules.ExperimentModules.oracles" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.core.experiment_modules.ExperimentModules.post_init">
+<span class="sig-name descname"><span class="pre">post_init</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#alts.core.experiment_modules.ExperimentModules.post_init" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.core.experiment_modules.ExperimentModules.query_selector">
+<span class="sig-name descname"><span class="pre">query_selector</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="query/query_selector.html#alts.core.query.query_selector.QuerySelector" title="alts.core.query.query_selector.QuerySelector"><span class="pre">QuerySelector</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">NOTSET</span></em><a class="headerlink" href="#alts.core.experiment_modules.ExperimentModules.query_selector" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.core.experiment_modules.ExperimentModules.step">
+<span class="sig-name descname"><span class="pre">step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iteration</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.core.experiment_modules.ExperimentModules.step" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.core.experiment_modules.ExperimentModules.time_source">
+<span class="sig-name descname"><span class="pre">time_source</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="data_process/time_source.html#alts.core.data_process.time_source.TimeSource" title="alts.core.data_process.time_source.TimeSource"><span class="pre">TimeSource</span></a></em><a class="headerlink" href="#alts.core.experiment_modules.ExperimentModules.time_source" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.core.experiment_modules.InitQueryEstimatorExperiment">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.core.experiment_modules.</span></span><span class="sig-name descname"><span class="pre">InitQueryEstimatorExperiment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.core.experiment_modules.InitQueryEstimatorExperiment" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#alts.core.experiment_modules.InitQueryExperimentModules" title="alts.core.experiment_modules.InitQueryExperimentModules"><code class="xref py py-class docutils literal notranslate"><span class="pre">InitQueryExperimentModules</span></code></a>, <a class="reference internal" href="#alts.core.experiment_modules.EstimatorExperiment" title="alts.core.experiment_modules.EstimatorExperiment"><code class="xref py py-class docutils literal notranslate"><span class="pre">EstimatorExperiment</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.core.experiment_modules.InitQueryExperimentModules">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.core.experiment_modules.</span></span><span class="sig-name descname"><span class="pre">InitQueryExperimentModules</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.core.experiment_modules.InitQueryExperimentModules" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#alts.core.experiment_modules.ExperimentModules" title="alts.core.experiment_modules.ExperimentModules"><code class="xref py py-class docutils literal notranslate"><span class="pre">ExperimentModules</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.core.experiment_modules.InitQueryExperimentModules.init_queries">
+<span class="sig-name descname"><span class="pre">init_queries</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#alts.core.experiment_modules.InitQueryExperimentModules.init_queries" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.core.experiment_modules.InitQueryExperimentModules.initial_query_sampler">
+<span class="sig-name descname"><span class="pre">initial_query_sampler</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="query/query_sampler.html#alts.core.query.query_sampler.QuerySampler" title="alts.core.query.query_sampler.QuerySampler"><span class="pre">QuerySampler</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">NOTSET</span></em><a class="headerlink" href="#alts.core.experiment_modules.InitQueryExperimentModules.initial_query_sampler" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.core.experiment_modules.InitQueryExperimentModules.initialize">
+<span class="sig-name descname"><span class="pre">initialize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#alts.core.experiment_modules.InitQueryExperimentModules.initialize" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.core.experiment_modules.InitQueryExperimentModules.oracles">
+<span class="sig-name descname"><span class="pre">oracles</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="oracle/oracles.html#alts.core.oracle.oracles.POracles" title="alts.core.oracle.oracles.POracles"><span class="pre">POracles</span></a></em><a class="headerlink" href="#alts.core.experiment_modules.InitQueryExperimentModules.oracles" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.core.experiment_modules.InitQueryExperimentModules.post_init">
+<span class="sig-name descname"><span class="pre">post_init</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#alts.core.experiment_modules.InitQueryExperimentModules.post_init" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Experiment Modules (Core)</a><ul>
+<li><a class="reference internal" href="#alts.core.experiment_modules.EstimatorExperiment"><code class="docutils literal notranslate"><span class="pre">EstimatorExperiment</span></code></a><ul>
+<li><a class="reference internal" href="#alts.core.experiment_modules.EstimatorExperiment.estimator"><code class="docutils literal notranslate"><span class="pre">EstimatorExperiment.estimator</span></code></a></li>
+<li><a class="reference internal" href="#alts.core.experiment_modules.EstimatorExperiment.post_init"><code class="docutils literal notranslate"><span class="pre">EstimatorExperiment.post_init()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#alts.core.experiment_modules.ExperimentModules"><code class="docutils literal notranslate"><span class="pre">ExperimentModules</span></code></a><ul>
+<li><a class="reference internal" href="#alts.core.experiment_modules.ExperimentModules.data_pools"><code class="docutils literal notranslate"><span class="pre">ExperimentModules.data_pools</span></code></a></li>
+<li><a class="reference internal" href="#alts.core.experiment_modules.ExperimentModules.initialize"><code class="docutils literal notranslate"><span class="pre">ExperimentModules.initialize()</span></code></a></li>
+<li><a class="reference internal" href="#alts.core.experiment_modules.ExperimentModules.oracles"><code class="docutils literal notranslate"><span class="pre">ExperimentModules.oracles</span></code></a></li>
+<li><a class="reference internal" href="#alts.core.experiment_modules.ExperimentModules.post_init"><code class="docutils literal notranslate"><span class="pre">ExperimentModules.post_init()</span></code></a></li>
+<li><a class="reference internal" href="#alts.core.experiment_modules.ExperimentModules.query_selector"><code class="docutils literal notranslate"><span class="pre">ExperimentModules.query_selector</span></code></a></li>
+<li><a class="reference internal" href="#alts.core.experiment_modules.ExperimentModules.step"><code class="docutils literal notranslate"><span class="pre">ExperimentModules.step()</span></code></a></li>
+<li><a class="reference internal" href="#alts.core.experiment_modules.ExperimentModules.time_source"><code class="docutils literal notranslate"><span class="pre">ExperimentModules.time_source</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#alts.core.experiment_modules.InitQueryEstimatorExperiment"><code class="docutils literal notranslate"><span class="pre">InitQueryEstimatorExperiment</span></code></a></li>
+<li><a class="reference internal" href="#alts.core.experiment_modules.InitQueryExperimentModules"><code class="docutils literal notranslate"><span class="pre">InitQueryExperimentModules</span></code></a><ul>
+<li><a class="reference internal" href="#alts.core.experiment_modules.InitQueryExperimentModules.init_queries"><code class="docutils literal notranslate"><span class="pre">InitQueryExperimentModules.init_queries()</span></code></a></li>
+<li><a class="reference internal" href="#alts.core.experiment_modules.InitQueryExperimentModules.initial_query_sampler"><code class="docutils literal notranslate"><span class="pre">InitQueryExperimentModules.initial_query_sampler</span></code></a></li>
+<li><a class="reference internal" href="#alts.core.experiment_modules.InitQueryExperimentModules.initialize"><code class="docutils literal notranslate"><span class="pre">InitQueryExperimentModules.initialize()</span></code></a></li>
+<li><a class="reference internal" href="#alts.core.experiment_modules.InitQueryExperimentModules.oracles"><code class="docutils literal notranslate"><span class="pre">InitQueryExperimentModules.oracles</span></code></a></li>
+<li><a class="reference internal" href="#alts.core.experiment_modules.InitQueryExperimentModules.post_init"><code class="docutils literal notranslate"><span class="pre">InitQueryExperimentModules.post_init()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="experiment_module.html"
+                          title="previous chapter">Experiment Module (Core)</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="experiment_runner.html"
+                          title="next chapter">Experiment Runner (Core)</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/core/experiment_modules.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+<div id="sidebarbutton" title="Collapse sidebar">
+<span>«</span>
+</div>
+
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="experiment_runner.html" title="Experiment Runner (Core)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="experiment_module.html" title="Experiment Module (Core)"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">ALTS-Documentation 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../core.html" >Core Modules</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Experiment Modules (Core)</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2024, Benjamin Gors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
+    </div>
+  </body>
+</html>

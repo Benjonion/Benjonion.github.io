@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Evaluator (Core) &#8212; ALTS-Documentation 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=48851edf" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/functions.css?v=c671ca28" />
+    <link rel="stylesheet" href="../_static/css/functions.css" type="text/css" />
+    
+    <script src="../_static/documentation_options.js?v=1b390748"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <script src="../_static/sidebar.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Experiment (Core)" href="experiment.html" />
+    <link rel="prev" title="Estimator (Core)" href="estimator.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="experiment.html" title="Experiment (Core)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="estimator.html" title="Estimator (Core)"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">ALTS-Documentation 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../core.html" accesskey="U">Core Modules</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Evaluator (Core)</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-alts.core.evaluator">
+<span id="evaluator-core"></span><h1>Evaluator (Core)<a class="headerlink" href="#module-alts.core.evaluator" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.core.evaluator.Evaluate">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.core.evaluator.</span></span><span class="sig-name descname"><span class="pre">Evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.core.evaluator.Evaluate" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.core.evaluator.Evaluate.post">
+<span class="sig-name descname"><span class="pre">post</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.core.evaluator.Evaluate.post" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.core.evaluator.Evaluate.pre">
+<span class="sig-name descname"><span class="pre">pre</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.core.evaluator.Evaluate.pre" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.core.evaluator.Evaluate.warp">
+<span class="sig-name descname"><span class="pre">warp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">methode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.core.evaluator.Evaluate.warp" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.core.evaluator.Evaluator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.core.evaluator.</span></span><span class="sig-name descname"><span class="pre">Evaluator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.core.evaluator.Evaluator" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="configuration.html#alts.core.configuration.Configurable" title="alts.core.configuration.Configurable"><code class="xref py py-class docutils literal notranslate"><span class="pre">Configurable</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.core.evaluator.Evaluator.experiment">
+<span class="sig-name descname"><span class="pre">experiment</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="experiment.html#alts.core.experiment.Experiment" title="alts.core.experiment.Experiment"><span class="pre">Experiment</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">Field(name=None,type=None,default=&lt;dataclasses._MISSING_TYPE</span> <span class="pre">object&gt;,default_factory=&lt;dataclasses._MISSING_TYPE</span> <span class="pre">object&gt;,init=False,repr=False,hash=None,compare=True,metadata=mappingproxy({}),_field_type=None)</span></em><a class="headerlink" href="#alts.core.evaluator.Evaluator.experiment" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.core.evaluator.Evaluator.register">
+<span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">experiment</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="experiment.html#alts.core.experiment.Experiment" title="alts.core.experiment.Experiment"><span class="pre">Experiment</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.core.evaluator.Evaluator.register" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="alts.core.evaluator.LogingEvaluator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">alts.core.evaluator.</span></span><span class="sig-name descname"><span class="pre">LogingEvaluator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'Any'</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.core.evaluator.LogingEvaluator" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#alts.core.evaluator.Evaluator" title="alts.core.evaluator.Evaluator"><code class="xref py py-class docutils literal notranslate"><span class="pre">Evaluator</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.core.evaluator.LogingEvaluator.folder">
+<span class="sig-name descname"><span class="pre">folder</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'log'</span></em><a class="headerlink" href="#alts.core.evaluator.LogingEvaluator.folder" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="alts.core.evaluator.LogingEvaluator.iteration">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">iteration</span></span><a class="headerlink" href="#alts.core.evaluator.LogingEvaluator.iteration" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.core.evaluator.LogingEvaluator.path">
+<span class="sig-name descname"><span class="pre">path</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'./eval'</span></em><a class="headerlink" href="#alts.core.evaluator.LogingEvaluator.path" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="alts.core.evaluator.LogingEvaluator.register">
+<span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">experiment</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="experiment.html#alts.core.experiment.Experiment" title="alts.core.experiment.Experiment"><span class="pre">Experiment</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#alts.core.evaluator.LogingEvaluator.register" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="alts.core.evaluator.LogingEvaluator.root_path">
+<span class="sig-name descname"><span class="pre">root_path</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'./eval'</span></em><a class="headerlink" href="#alts.core.evaluator.LogingEvaluator.root_path" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Evaluator (Core)</a><ul>
+<li><a class="reference internal" href="#alts.core.evaluator.Evaluate"><code class="docutils literal notranslate"><span class="pre">Evaluate</span></code></a><ul>
+<li><a class="reference internal" href="#alts.core.evaluator.Evaluate.post"><code class="docutils literal notranslate"><span class="pre">Evaluate.post()</span></code></a></li>
+<li><a class="reference internal" href="#alts.core.evaluator.Evaluate.pre"><code class="docutils literal notranslate"><span class="pre">Evaluate.pre()</span></code></a></li>
+<li><a class="reference internal" href="#alts.core.evaluator.Evaluate.warp"><code class="docutils literal notranslate"><span class="pre">Evaluate.warp()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#alts.core.evaluator.Evaluator"><code class="docutils literal notranslate"><span class="pre">Evaluator</span></code></a><ul>
+<li><a class="reference internal" href="#alts.core.evaluator.Evaluator.experiment"><code class="docutils literal notranslate"><span class="pre">Evaluator.experiment</span></code></a></li>
+<li><a class="reference internal" href="#alts.core.evaluator.Evaluator.register"><code class="docutils literal notranslate"><span class="pre">Evaluator.register()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#alts.core.evaluator.LogingEvaluator"><code class="docutils literal notranslate"><span class="pre">LogingEvaluator</span></code></a><ul>
+<li><a class="reference internal" href="#alts.core.evaluator.LogingEvaluator.folder"><code class="docutils literal notranslate"><span class="pre">LogingEvaluator.folder</span></code></a></li>
+<li><a class="reference internal" href="#alts.core.evaluator.LogingEvaluator.iteration"><code class="docutils literal notranslate"><span class="pre">LogingEvaluator.iteration</span></code></a></li>
+<li><a class="reference internal" href="#alts.core.evaluator.LogingEvaluator.path"><code class="docutils literal notranslate"><span class="pre">LogingEvaluator.path</span></code></a></li>
+<li><a class="reference internal" href="#alts.core.evaluator.LogingEvaluator.register"><code class="docutils literal notranslate"><span class="pre">LogingEvaluator.register()</span></code></a></li>
+<li><a class="reference internal" href="#alts.core.evaluator.LogingEvaluator.root_path"><code class="docutils literal notranslate"><span class="pre">LogingEvaluator.root_path</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="estimator.html"
+                          title="previous chapter">Estimator (Core)</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="experiment.html"
+                          title="next chapter">Experiment (Core)</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/core/evaluator.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+<div id="sidebarbutton" title="Collapse sidebar">
+<span>«</span>
+</div>
+
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="experiment.html" title="Experiment (Core)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="estimator.html" title="Estimator (Core)"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">ALTS-Documentation 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../core.html" >Core Modules</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Evaluator (Core)</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2024, Benjamin Gors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
+    </div>
+  </body>
+</html>
