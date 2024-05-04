@@ -1,0 +1,1 @@
+Open index.html as first page
